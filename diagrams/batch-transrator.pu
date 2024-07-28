@@ -1,0 +1,13 @@
+@startuml batch-translator
+
+actor User
+
+component "batch-translator" <<jar / Maven Plugin>> as bt
+file Doc_ja.md as docja
+file Doc_en.md as docen
+interface TranslationService as ts
+
+User -> bt: 1. execute
+bt -up-> docja: 2. read
+bt -> ts: 3. translate\l-> Doc_ja\l<- Doc_en
+bt --> docen: 4. write

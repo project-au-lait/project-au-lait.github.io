@@ -1,0 +1,18 @@
+{
+  "catchphrase": "Make the bittersweetness of system development milder",
+  "description": "We aim to contribute to improving system quality by automating and streamlining the work of engineers involved in system development. The tool is developed as OSS and released under Apache License 2.0.",
+
+  "products": {
+    "Batch Translator": {
+      "description": "BBatch Translator is a CLI tool for translating text files. The main intended users are OSS development project members who need to translate READMEs and documents. The main expected uses are as follows.<br/><br/> - Translating a single file (e.g. README.md)<br/> - Batch translation of files with specific extensions under a directory (documents using AsciiDoctor, etc.)",
+      "usage": "Batch Translator runs as a Java command or as a Maven Plugin."
+    },
+
+    "JPA Entity Generator": {
+      "description": "JPA Entity Generator is a tool that reads a DB table definition and generates a JPA Entity class java file based on it.",
+      "usage": "JPA Entity Generator runs as a Java command or as a Maven Plugin."
+    }
+  },
+
+  "operatedBy": "Project Au Lait is developed and operated by Monocrea Co., Ltd."
+}

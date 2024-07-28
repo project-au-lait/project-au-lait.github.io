@@ -1,0 +1,13 @@
+@startuml jpa-entity-generator
+
+actor User
+
+component "jpa-entity-generator" <<jar / Maven Plugin>> as jeg
+database DB
+file config.json as config
+file Entity.java as entity
+
+User -> jeg: 1. execute
+jeg -up-> config: 2. read
+jeg -> DB: 3. read\l<- metadata
+jeg --> entity: write
