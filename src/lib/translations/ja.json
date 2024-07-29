@@ -11,6 +11,11 @@
     "JPA Entity Generator": {
       "description": "JPA Entity Generator は、DB のテーブル定義を読み取り、それをもとに JPA の Entity クラスの java ファイルを生成するツールです。",
       "usage": "JPA Entity Generator は Java コマンド、または Maven Plugin として実行します。"
+    },
+
+    "Dev Servers": {
+      "description": "Dev Servers は、CI / CD 用のサーバー ツールをセットアップするための Docker Compose アセットです。 Docker を使用して次のツールをセットアップし、すぐに使用できるようにします。",
+      "usage": "Dev ServersはDocker Composeとして実行します。"
     }
   },
 

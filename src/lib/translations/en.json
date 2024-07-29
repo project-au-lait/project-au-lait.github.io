@@ -11,6 +11,11 @@
     "JPA Entity Generator": {
       "description": "JPA Entity Generator is a tool that reads a DB table definition and generates a JPA Entity class java file based on it.",
       "usage": "JPA Entity Generator runs as a Java command or as a Maven Plugin."
+    },
+
+    "Dev Servers": {
+      "description": "Dev Servers is a Docker Compose asset to setup server tools for CI / CD. It setups the following tools with Docker and makes them available immediately.<br/><br/>- Souce Code Management : GitBucket<br/>- Continuous Integration : Jenkins<br/>- Static Code Analysis : SonarQube<br/>- Issue Tracking System : Redmine<br/>- Artifact Repository Manager : Nexus<br/>- Wiki : Wiki.js",
+      "usage": "Dev Servers runs as Docker Compose"
     }
   },
 

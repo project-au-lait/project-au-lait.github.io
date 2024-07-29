@@ -12,4 +12,10 @@ export const products = [
     umlPath: './jpa-entity-generator.svg',
     repo: 'https://github.com/project-au-lait/jpa-entity-generator',
   },
+  {
+    id: 3,
+    name: 'Dev Servers',
+    umlPath: './dev-servers.svg',
+    repo: 'https://github.com/project-au-lait/dev-servers',
+  },
 ];

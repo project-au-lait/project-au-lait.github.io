@@ -1,0 +1,20 @@
+@startuml dev-servers
+
+
+actor SystemAdmin
+actor Developers
+
+rectangle "Docker Compose" as docker {
+  component OpenLDAP
+  component Nginx
+  component PostgreSQL
+  component "GitBucket\nRedmine\nJenkins\nSonarQube\nNexus\nWiki.js\nSelfServicePassword" as Servers
+
+  Servers --> PostgreSQL: use
+  Servers --> OpenLDAP: authenticage
+}
+
+
+SystemAdmin -up-> docker: docker compose up
+Developers -> Nginx: access
+Nginx -> Servers: proxy
