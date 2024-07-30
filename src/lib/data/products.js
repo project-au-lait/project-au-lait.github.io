@@ -18,4 +18,10 @@ export const products = [
     umlPath: './dev-servers.svg',
     repo: 'https://github.com/project-au-lait/dev-servers',
   },
+  {
+    id: 4,
+    name: 'Csv Loader',
+    umlPath: './csv-loader.svg',
+    repo: 'https://github.com/project-au-lait/csv-loader',
+  },
 ];

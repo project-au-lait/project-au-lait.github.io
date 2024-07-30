@@ -16,6 +16,11 @@
     "Dev Servers": {
       "description": "Dev Servers は、CI / CD 用のサーバー ツールをセットアップするための Docker Compose アセットです。 Docker を使用して次のツールをセットアップし、すぐに使用できるようにします。",
       "usage": "Dev ServersはDocker Composeとして実行します。"
+    },
+
+    "Csv Loader": {
+      "description": "CSV LoaderはCSVファイルをDBにロードするツールです。CSV Loaderのv0.8時点での用途はFlywayのJava-based Migrationに特化しています。次バージョン移行でjar単独実行、Maven Plugin等のサポートを予定しています。",
+      "usage": "Csv LoaderはFlyway経由でJavaライブラリとして使用します。"
     }
   },
 

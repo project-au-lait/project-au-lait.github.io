@@ -1,0 +1,12 @@
+@startuml csv-loader
+
+actor Developer
+component Flyway
+component CsvLoader
+database DB
+file "TableData.csv" as csv
+
+Developer -> Flyway: 1. flyway:migrate
+Flyway --> CsvLoader: 2. execute
+CsvLoader -left-> csv: 3. read
+CsvLoader -> DB: 4. INSERT
