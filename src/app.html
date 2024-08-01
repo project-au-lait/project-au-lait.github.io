@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-  <head>
+  <head prefix="og: http://ogp.me/ns#">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZGN62Y12P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,6 +14,19 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:url" content="https://aulait.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./ogp.png" />
+    <meta property="og:title" content="Project Au Lait" />
+    <meta property="og:description" content="Make the bittersweetness of system development milder" />
+    <meta property="og:site_name" content="Project Au Lait" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+
+    <meta name="twitter:image" content="./ogp.png" />
+    <meta name="twitter:card" content="summary" />
+
     %sveltekit.head%
   </head>
   <body data-sveltekit-preload-data="hover">
