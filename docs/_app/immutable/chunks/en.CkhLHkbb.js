@@ -17,10 +17,10 @@ const e = 'Make the bittersweetness of system development milder',
         'Dev Servers is a Docker Compose asset to setup server tools for CI / CD. It setups the following tools with Docker and makes them available immediately.<br/><br/>- Souce Code Management : GitBucket<br/>- Continuous Integration : Jenkins<br/>- Static Code Analysis : SonarQube<br/>- Issue Tracking System : Redmine<br/>- Artifact Repository Manager : Nexus<br/>- Wiki : Wiki.js',
       usage: 'Dev Servers runs as Docker Compose',
     },
-    'Csv Loader': {
+    'CSV Loader': {
       description:
         "CSV Loader is a tool to load CSV files into DB. As of v0.8, CSV Loader is specialized for Flyway's Java-based Migration. We plan to support standalone jar execution, Maven Plugin, etc. in the next version.",
-      usage: 'Csv Loader is used as a Java library via Flyway.',
+      usage: 'CSV Loader is used as a Java library via Flyway.',
     },
   },
   s = 'Project Au Lait is developed and operated by Monocrea Co., Ltd.',
