@@ -11,7 +11,7 @@ rectangle "Docker Compose" as docker {
   component "GitBucket\nRedmine\nJenkins\nSonarQube\nNexus\nWiki.js\nSelfServicePassword" as Servers
 
   Servers --> PostgreSQL: use
-  Servers --> OpenLDAP: authenticage
+  Servers --> OpenLDAP: authenticate
 }
 
 
