@@ -14,7 +14,7 @@ const e = 'Make the bittersweetness of system development milder',
     },
     'Dev Servers': {
       description:
-        'Dev Servers is a Docker Compose asset to setup server tools for CI / CD. It setups the following tools with Docker and makes them available immediately.<br/><br/>- Souce Code Management : GitBucket<br/>- Continuous Integration : Jenkins<br/>- Static Code Analysis : SonarQube<br/>- Issue Tracking System : Redmine<br/>- Artifact Repository Manager : Nexus<br/>- Wiki : Wiki.js',
+        'Dev Servers is a Docker Compose asset to setup server tools for CI / CD. It setups the following tools with Docker and makes them available immediately.<br/><br/>- Source Code Management : GitBucket<br/>- Continuous Integration : Jenkins<br/>- Static Code Analysis : SonarQube<br/>- Issue Tracking System : Redmine<br/>- Artifact Repository Manager : Nexus<br/>- Wiki : Wiki.js',
       usage: 'Dev Servers runs as Docker Compose',
     },
     'CSV Loader': {
