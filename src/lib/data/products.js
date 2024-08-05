@@ -20,7 +20,7 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Csv Loader',
+    name: 'CSV Loader',
     umlPath: './csv-loader.svg',
     repo: 'https://github.com/project-au-lait/csv-loader',
   },
