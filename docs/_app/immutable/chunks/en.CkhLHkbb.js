@@ -19,7 +19,7 @@ const e = 'Make the bittersweetness of system development milder',
     },
     'Csv Loader': {
       description:
-        "CSV Loader is a tool to load CSV files into DB.As of v0.8, CSV Loader is specialized for Flyway's Java-based Migration. We plan to support standalone jar execution, Maven Plugin, etc. in the next version.",
+        "CSV Loader is a tool to load CSV files into DB. As of v0.8, CSV Loader is specialized for Flyway's Java-based Migration. We plan to support standalone jar execution, Maven Plugin, etc. in the next version.",
       usage: 'Csv Loader is used as a Java library via Flyway.',
     },
   },
