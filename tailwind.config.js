@@ -7,8 +7,7 @@ export default {
     './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}',
   ],
   theme: {
-    extend: {
-    },
+    extend: {},
   },
   plugins: [flowbitePlugin],
 };
