@@ -1,0 +1,41 @@
+<script>
+  import { t } from '$lib/translations';
+
+  const msgBase = 'msg.products.SVQK.usage';
+</script>
+
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```bat
+chcp 65001
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```bat
+mvn archetype:generate ^
+  -DarchetypeGroupId=dev.aulait.svqk ^
+  -DarchetypeArtifactId=svqk-archetype-refimpl ^
+  -DarchetypeVersion=0.8 ^
+  -DgroupId=my-groupId ^
+  -DartifactId=my-artifactId
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```bat
+cd my-artifactId
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```bat
+mvnw install -T 1C -P setup
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```bat
+code my-artifactId.code-workspace
+```

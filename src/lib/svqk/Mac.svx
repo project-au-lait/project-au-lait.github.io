@@ -1,0 +1,35 @@
+<script>
+  import { t } from '$lib/translations';
+
+  const msgBase = 'msg.products.SVQK.usage';
+</script>
+
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```sh
+mvn archetype:generate \
+  -DarchetypeGroupId=dev.aulait.svqk \
+  -DarchetypeArtifactId=svqk-archetype-refimpl \
+  -DarchetypeVersion=0.8 \
+  -DgroupId=my-groupId \
+  -DartifactId=my-artifactId
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```sh
+cd my-artifactId
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```sh
+./mvnw install -T 1C -P setup
+```
+
+<p>{$t(`${msgBase}.example`)}</p>
+
+```sh
+code my-artifactId.code-workspace
+```

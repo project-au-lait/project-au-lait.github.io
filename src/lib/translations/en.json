@@ -3,6 +3,13 @@
   "description": "We aim to contribute to improving system quality by automating and streamlining the work of engineers involved in system development. The tool is developed as OSS and released under Apache License 2.0.",
 
   "products": {
+    "SVQK": {
+      "feature": "- Web app development with SvelteKit + Quarkus + Playwright<br/>- Development starts with Frontend and Backend Passing Test (Unit, Integration, End to End)<br/>- Everything from set-up to End to End Test can be completed by command, even in CI/CD environments",
+      "usage": {
+        "example": "test"
+      }
+    },
+
     "Batch Translator": {
       "description": "Batch Translator is a CLI tool for translating text files. The main intended users are OSS development project members who need to translate READMEs and documents. The main expected uses are as follows.<br/><br/> - Translating a single file (e.g. README.md)<br/> - Batch translation of files with specific extensions under a directory (documents using AsciiDoctor, etc.)",
       "usage": "Batch Translator runs as a Java command or as a Maven Plugin."

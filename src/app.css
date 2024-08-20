@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre {
+  background-color: #161b22;
+  overflow-x: auto;
+  color: white;
+  padding: 1rem;
+}
