@@ -6,7 +6,13 @@
     "SVQK": {
       "feature": "- Web app development with SvelteKit + Quarkus + Playwright<br/>- Development starts with Frontend and Backend Passing Test (Unit, Integration, End to End)<br/>- Everything from set-up to End to End Test can be completed by command, even in CI/CD environments",
       "usage": {
-        "example": "test"
+        "description": "Steps from SVQK project creation to set-up and start-up.",
+        "setUtf-8": "Set character encoding to UTF-8",
+        "createPj": "Create SVQK project",
+        "setup": "Go to the project you created and run the setup commands",
+        "openWs": "Open the VSCode workspace",
+        "runTask": "Start Back and Front with VSCode Task",
+        "access": "Accessed via browser"
       }
     },
 

@@ -6,7 +6,13 @@
     "SVQK": {
       "feature": "- SvelteKit + Quarkus + PlaywrightでWebアプリ開発<br/>- Frontend、BackendがTest (Unit、Integration、End to End)をPassする状態から開発を開始<br/>- セットアップからEnd to End Testまで全てコマンドで完結 CI/CD環境でも実行可能",
       "usage": {
-        "example": "test"
+        "description": "SVQKのプロジェクト作成→セットアップ→起動までの手順",
+        "setUtf-8": "文字コードをUTF-8にセット",
+        "createPj": "SVQKプロジェクトを作成",
+        "setup": "作成したプロジェクトに移動し、セットアップコマンドを実行",
+        "openWs": "VSCodeワークスペースを開く",
+        "runTask": "VSCode TaskでBackとFrontを起動",
+        "access": "ブラウザでアクセス"
       }
     },
 
