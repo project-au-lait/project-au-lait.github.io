@@ -20,6 +20,8 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@types/eslint": "^8.56.7",
     "autoprefixer": "^10.4.19",
+    "embla-carousel-autoplay": "^8.2.0",
+    "embla-carousel-svelte": "^8.2.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.36.0",

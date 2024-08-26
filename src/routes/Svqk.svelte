@@ -1,10 +1,12 @@
 <script>
   import { t } from '$lib/translations';
-  import { Carousel, Kbd, TabItem, Tabs } from 'flowbite-svelte';
+  import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
   import { CodeCopy } from 'svelte-code-copy';
   import Highlight from 'svelte-highlight';
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
+  import emblaCarouselSvelte from 'embla-carousel-svelte';
+  import Autoplay from 'embla-carousel-autoplay';
 
   const images = [
     {
@@ -38,10 +40,10 @@
 </svelte:head>
 
 <div class="container mx-auto lg:w-4/5">
-  <p class="text-4xl title-font font-medium my-2">SVQK</p>
+  <p class="text-4xl title-font font-medium my-4">SVQK</p>
   <p class="text-gray-600 mb-4">{@html $t('msg.products.SVQK.feature')}</p>
 
-  <p class="text-2xl my-2">Quick Start</p>
+  <p class="text-3xl mb-2">Quick Start</p>
   <p class="mb-2">{$t('msg.products.SVQK.usage.description')}</p>
 
   <Tabs>
@@ -135,7 +137,17 @@
     </TabItem>
   </Tabs>
 
-  <div class="max-w-4xl mx-auto">
-    <Carousel {images} duration={5000} style="height: 32rem;" />
+  <!-- carousel -->
+  <div
+    class="overflow-hidden max-w-4xl mx-auto my-4"
+    use:emblaCarouselSvelte={{ options: { loop: true }, plugins: [Autoplay()] }}
+  >
+    <div class="flex items-center">
+      {#each images as img}
+        <div class="min-w-0" style="flex: 0 0 100%;">
+          <img src={img.src} alt={img.alt} class="rounded-lg" />
+        </div>
+      {/each}
+    </div>
   </div>
 </div>
