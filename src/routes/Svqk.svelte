@@ -1,37 +1,33 @@
 <script>
   import { t } from '$lib/translations';
+  import Autoplay from 'embla-carousel-autoplay';
+  import emblaCarouselSvelte from 'embla-carousel-svelte';
   import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
   import { CodeCopy } from 'svelte-code-copy';
   import Highlight from 'svelte-highlight';
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
-  import emblaCarouselSvelte from 'embla-carousel-svelte';
-  import Autoplay from 'embla-carousel-autoplay';
+
+  const qsStepClass = 'text-lg my-2';
 
   const images = [
     {
       alt: 'setup',
       src: '/svqk/setup.png',
-      title: 'setup',
     },
     {
       alt: 'pw-repo',
       src: '/svqk/pw-repo.png',
-      title: 'pw-repo',
     },
     {
       alt: 'vscode-ws',
       src: '/svqk/vscode-ws.png',
-      title: 'vscode-ws',
     },
     {
       alt: 'regist-issue',
       src: '/svqk/regist-issue.png',
-      title: 'regist-issue',
     },
   ];
-
-  const qsStepClass = 'text-lg my-2';
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
@@ -140,7 +136,7 @@
   <!-- carousel -->
   <div
     class="overflow-hidden max-w-4xl mx-auto my-4"
-    use:emblaCarouselSvelte={{ options: { loop: true }, plugins: [Autoplay()] }}
+    use:emblaCarouselSvelte={{ options: { loop: true }, plugins: [Autoplay({ delay: 5000 })] }}
   >
     <div class="flex items-center">
       {#each images as img}
