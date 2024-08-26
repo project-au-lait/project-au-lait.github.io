@@ -8,7 +8,7 @@
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
 
-  const qsStepClass = 'text-lg my-2';
+  const qsStepClass = 'text-lg mt-4 mb-2';
 
   const images = [
     {
@@ -44,92 +44,134 @@
 
   <Tabs>
     <TabItem open title="Windows">
-      <p class={qsStepClass}>1. {$t('msg.products.SVQK.usage.setUtf-8')}</p>
-      <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
+      <ol class="list-decimal px-8">
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf-8')}</p>
+          <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
+        </li>
 
-      <p class={qsStepClass}>2. {$t('msg.products.SVQK.usage.createPj')}</p>
-      <CodeCopy>
-        <Highlight
-          language={dos}
-          code={`mvn archetype:generate ^
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.createPj')}</p>
+          <CodeCopy>
+            <Highlight
+              language={dos}
+              code={`mvn archetype:generate ^
   -DarchetypeGroupId=dev.aulait.svqk ^
   -DarchetypeArtifactId=svqk-archetype-refimpl ^
   -DarchetypeVersion=0.8 ^
   -DgroupId=my-groupId ^
   -DartifactId=my-artifactId`}
-        />
-      </CodeCopy>
+            />
+          </CodeCopy>
+        </li>
 
-      <p class={qsStepClass}>3. {$t('msg.products.SVQK.usage.setup')}</p>
-      <CodeCopy><Highlight language={dos} code={'cd my-artifactId'} /></CodeCopy>
-      <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
+          <CodeCopy><Highlight language={dos} code={'cd my-artifactId'} /></CodeCopy>
+          <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
+        </li>
 
-      <p class={qsStepClass}>4. {$t('msg.products.SVQK.usage.openWs')}</p>
-      <CodeCopy><Highlight language={dos} code={'code my-artifactId.code-workspace'} /></CodeCopy>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
+          <CodeCopy
+            ><Highlight language={dos} code={'code my-artifactId.code-workspace'} /></CodeCopy
+          >
+        </li>
 
-      <p class={qsStepClass}>5. {$t('msg.products.SVQK.usage.runTask')}</p>
-      <p class={qsStepClass}>
-        <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
-          class="px-2 py-1.5">P</Kbd
-        > &gt; Tasks: Run task &gt; start-back
-      </p>
-      <p class={qsStepClass}>
-        <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
-          class="px-2 py-1.5">P</Kbd
-        > &gt; Tasks: Run task &gt; start-front
-      </p>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.runTask')}</p>
+          <ul class="list-disc pl-4">
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
+                  class="px-2 py-1.5">P</Kbd
+                > &gt; Tasks: Run task &gt; start-back
+              </p>
+            </li>
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
+                  class="px-2 py-1.5">P</Kbd
+                > &gt; Tasks: Run task &gt; start-front
+              </p>
+            </li>
+          </ul>
+        </li>
 
-      <p class={qsStepClass}>6. {$t('msg.products.SVQK.usage.access')}</p>
-      <p class={qsStepClass}>
-        <a
-          href="http://localhost:5173"
-          class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          >http://localhost:5173</a
-        >
-      </p>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.access')}</p>
+          <p class={qsStepClass}>
+            <a
+              href="http://localhost:5173"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >http://localhost:5173</a
+            >
+          </p>
+        </li>
+      </ol>
     </TabItem>
 
     <TabItem title="Mac">
-      <p class={qsStepClass}>1. {$t('msg.products.SVQK.usage.createPj')}</p>
-      <CodeCopy>
-        <Highlight
-          language={bash}
-          code={`mvn archetype:generate \\
+      <ol class="list-decimal px-8">
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.createPj')}</p>
+          <CodeCopy>
+            <Highlight
+              language={bash}
+              code={`mvn archetype:generate \\
   -DarchetypeGroupId=dev.aulait.svqk \\
   -DarchetypeArtifactId=svqk-archetype-refimpl \\
   -DarchetypeVersion=0.8 \\
   -DgroupId=my-groupId \\
   -DartifactId=my-artifactId`}
-        />
-      </CodeCopy>
+            />
+          </CodeCopy>
+        </li>
 
-      <p class={qsStepClass}>2. {$t('msg.products.SVQK.usage.setup')}</p>
-      <CodeCopy><Highlight language={bash} code={'cd my-artifactId'} /></CodeCopy>
-      <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
+          <CodeCopy><Highlight language={bash} code={'cd my-artifactId'} /></CodeCopy>
+          <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
+        </li>
 
-      <p class={qsStepClass}>3. {$t('msg.products.SVQK.usage.openWs')}</p>
-      <CodeCopy><Highlight language={bash} code={'code my-artifactId.code-workspace'} /></CodeCopy>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
+          <CodeCopy
+            ><Highlight language={bash} code={'code my-artifactId.code-workspace'} /></CodeCopy
+          >
+        </li>
 
-      <p class={qsStepClass}>4. {$t('msg.products.SVQK.usage.runTask')}</p>
-      <p class={qsStepClass}>
-        <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
-          class="px-2 py-1.5">P</Kbd
-        > &gt; Tasks: Run task &gt; start-back
-      </p>
-      <p class={qsStepClass}>
-        <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
-          class="px-2 py-1.5">P</Kbd
-        > &gt; Tasks: Run task &gt; start-front
-      </p>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.runTask')}</p>
+          <ul class="list-disc pl-4">
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
+                  class="px-2 py-1.5">P</Kbd
+                > &gt; Tasks: Run task &gt; start-back
+              </p>
+            </li>
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
+                  class="px-2 py-1.5">P</Kbd
+                > &gt; Tasks: Run task &gt; start-front
+              </p>
+            </li>
+          </ul>
+        </li>
 
-      <p class={qsStepClass}>5. {$t('msg.products.SVQK.usage.access')}</p>
-      <p class={qsStepClass}>
-        <a
-          href="http://localhost:5173"
-          class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          >http://localhost:5173</a
-        >
-      </p>
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.access')}</p>
+          <p class={qsStepClass}>
+            <a
+              href="http://localhost:5173"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >http://localhost:5173</a
+            >
+          </p>
+        </li>
+      </ol>
     </TabItem>
   </Tabs>
 
