@@ -3,6 +3,19 @@
   "description": "Project Au Laitはシステム開発に役立つツールを開発しています。システム開発に携わるエンジニアの作業を自動化・効率化することで、システムの品質向上に寄与することを目指しています。ツールはOSSとして開発していて、Apache License 2.0で公開しています。",
 
   "products": {
+    "SVQK": {
+      "feature": "- SvelteKit + Quarkus + PlaywrightでWebアプリ開発<br/>- Frontend、BackendがTest (Unit、Integration、End to End)をPassする状態から開発を開始<br/>- セットアップからEnd to End Testまで全てコマンドで完結 CI/CD環境でも実行可能",
+      "usage": {
+        "description": "SVQKのプロジェクト作成→セットアップ→起動までの手順",
+        "setUtf-8": "文字コードをUTF-8にセット",
+        "createPj": "SVQKプロジェクトを作成",
+        "setup": "作成したプロジェクトに移動し、セットアップコマンドを実行",
+        "openWs": "VSCodeワークスペースを開く",
+        "runTask": "VSCode TaskでBackとFrontを起動",
+        "access": "ブラウザでアクセス"
+      }
+    },
+
     "Batch Translator": {
       "description": "Batch Translator はテキストファイルを翻訳する CLI ツールです。想定する主な利用者は、README やドキュメントを翻訳する必要のある OSS 開発プロジェクトメンバーです。想定する主な用途は以下のようなものです。<br/><br/>・1 つのファイルの翻訳 (README.md など)<br/>・ディレクトリ以下の特定の拡張子を持ったファイルの一括翻訳 (AsciiDoctorを使ったドキュメントなど)",
       "usage": "Batch Translator は Java コマンド、または Maven Plugin として実行します。"
