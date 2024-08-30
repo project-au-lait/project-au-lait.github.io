@@ -58,9 +58,10 @@
               code={`mvn archetype:generate ^
   -DarchetypeGroupId=dev.aulait.svqk ^
   -DarchetypeArtifactId=svqk-archetype-refimpl ^
-  -DarchetypeVersion=0.8 ^
-  -DgroupId=my-groupId ^
-  -DartifactId=my-artifactid`}
+  -DarchetypeVersion=0.6 ^
+  -DgroupId=my.group.id ^
+  -DartifactId=my-artifactid ^
+  -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
@@ -121,9 +122,10 @@
               code={`mvn archetype:generate \\
   -DarchetypeGroupId=dev.aulait.svqk \\
   -DarchetypeArtifactId=svqk-archetype-refimpl \\
-  -DarchetypeVersion=0.8 \\
-  -DgroupId=my-groupId \\
-  -DartifactId=my-artifactid`}
+  -DarchetypeVersion=0.6 \\
+  -DgroupId=my.group.id  \\
+  -DartifactId=my-artifactid \\
+  -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
@@ -131,6 +133,7 @@
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
           <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
+          <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
           <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
         </li>
 
