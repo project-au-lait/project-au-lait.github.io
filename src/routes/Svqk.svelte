@@ -60,21 +60,21 @@
   -DarchetypeArtifactId=svqk-archetype-refimpl ^
   -DarchetypeVersion=0.8 ^
   -DgroupId=my-groupId ^
-  -DartifactId=my-artifactId`}
+  -DartifactId=my-artifactid`}
             />
           </CodeCopy>
         </li>
 
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
-          <CodeCopy><Highlight language={dos} code={'cd my-artifactId'} /></CodeCopy>
+          <CodeCopy><Highlight language={dos} code={'cd my-artifactid'} /></CodeCopy>
           <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
         </li>
 
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
           <CodeCopy
-            ><Highlight language={dos} code={'code my-artifactId.code-workspace'} /></CodeCopy
+            ><Highlight language={dos} code={'code my-artifactid.code-workspace'} /></CodeCopy
           >
         </li>
 
@@ -123,21 +123,21 @@
   -DarchetypeArtifactId=svqk-archetype-refimpl \\
   -DarchetypeVersion=0.8 \\
   -DgroupId=my-groupId \\
-  -DartifactId=my-artifactId`}
+  -DartifactId=my-artifactid`}
             />
           </CodeCopy>
         </li>
 
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
-          <CodeCopy><Highlight language={bash} code={'cd my-artifactId'} /></CodeCopy>
+          <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
           <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
         </li>
 
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
           <CodeCopy
-            ><Highlight language={bash} code={'code my-artifactId.code-workspace'} /></CodeCopy
+            ><Highlight language={bash} code={'code my-artifactid.code-workspace'} /></CodeCopy
           >
         </li>
 
