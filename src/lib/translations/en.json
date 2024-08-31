@@ -4,15 +4,16 @@
 
   "products": {
     "SVQK": {
-      "feature": "- Web app development with SvelteKit + Quarkus + Playwright<br/>- Development starts with Frontend and Backend Passing Test (Unit, Integration, End to End)<br/>- Everything from set-up to End to End Test can be completed by command, even in CI/CD environments",
+      "features": "SVQK is an asset for developing web applications using SvelteKit, Quarkus, and Playwright.\nYou can start development with both the Frontend and Backend in a state where they pass tests (Unit, Integration, and End-to-End).\nEverything from setup to End-to-End testing is completed with commands, making it executable in a CI/CD environment as well.",
       "usage": {
-        "description": "Steps from SVQK project creation to set-up and start-up.",
-        "setUtf-8": "Set character encoding to UTF-8",
-        "createPj": "Create SVQK project",
-        "setup": "Go to the project you created and run the setup commands",
-        "openWs": "Open the VSCode workspace",
-        "runTask": "Start Back and Front with VSCode Task",
-        "access": "Accessed via browser"
+        "requiredSoftware": "To develop applications using SVQK, you need the following software.",
+        "description": "To start developing with SVQK, create a project using Maven Archetype, which SVQK provides. To create a project from Archetype, run the following command.",
+        "setUtf-8": "Set the console character code to UTF-8.",
+        "createPj": "Create a SVQK project.",
+        "setup": "Move to the directory of the created project and execute the setup command.",
+        "openWs": "Open the created project as a VSCode workspace.",
+        "runTask": "Start the Backend and Frontend applications using VSCode Task.",
+        "access": "Once the Frontend application is started, the following URL will be displayed in the browser."
       }
     },
 

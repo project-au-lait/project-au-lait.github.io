@@ -4,15 +4,17 @@
 
   "products": {
     "SVQK": {
-      "feature": "- SvelteKit + Quarkus + PlaywrightでWebアプリ開発<br/>- Frontend、BackendがTest (Unit、Integration、End to End)をPassする状態から開発を開始<br/>- セットアップからEnd to End Testまで全てコマンドで完結 CI/CD環境でも実行可能",
+      "features": "SVQKは、SvelteKit + Quarkus + PlaywrightでWebアプリケーションを開発するためのアセットです。\nFrontend、BackendがTest (Unit、Integration、End to End)をPassする状態から開発を開始することができます。\nセットアップからEnd to End Testまで全てコマンドで完結し、CI/CD環境でも実行可能です。",
+
       "usage": {
-        "description": "SVQKのプロジェクト作成→セットアップ→起動までの手順",
-        "setUtf-8": "文字コードをUTF-8にセット",
-        "createPj": "SVQKプロジェクトを作成",
-        "setup": "作成したプロジェクトに移動し、セットアップコマンドを実行",
-        "openWs": "VSCodeワークスペースを開く",
-        "runTask": "VSCode TaskでBackとFrontを起動",
-        "access": "ブラウザでアクセス"
+        "requiredSoftware": "SVQKを使用してアプリケーションを開発するには、以下のソフトウェアが必要です。",
+        "description": "SVQKを使用して開発を始めるには、SVQKが提供するMaven Archetypeを使用してプロジェクトを作成します。Archetypeからプロジェクトを作成するには、以下のコマンドを実行します。",
+        "setUtf-8": "コンソールの文字コードをUTF-8にセットします。",
+        "createPj": "SVQKプロジェクトを作成します。",
+        "setup": "作成したプロジェクトのディレクトリに移動し、セットアップコマンドを実行します。",
+        "openWs": "作成したプロジェクトをVSCodeワークスペースとして開きます。",
+        "runTask": "VSCode TaskでBackendアプリケーションとFrontendアプリケーションを起動します。",
+        "access": "Frontendアプリケーションが起動すると、ブラウザで以下のURLが表示されます。"
       }
     },
 

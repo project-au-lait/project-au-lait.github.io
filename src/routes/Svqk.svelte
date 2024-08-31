@@ -9,7 +9,7 @@
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
 
-  const qsStepClass = 'text-lg mt-4 mb-2';
+  const qsStepClass = 'mt-4 mb-2';
 
   const images = [
     {
@@ -36,19 +36,36 @@
   {@html monokai}
 </svelte:head>
 
-<div class="container mx-auto lg:w-4/5 px-5">
-  <p class="text-4xl title-font font-medium my-4">SVQK</p>
-  <p class="text-gray-600 mb-4">{@html $t('msg.products.SVQK.feature')}</p>
+<div class="container mx-auto lg:w-4/5 px-5 text-gray-600 body-font">
+  <h1 class="text-4xl title-font font-medium text-gray-900 my-4">SVQK</h1>
+  <ul class="list-disc ml-8">
+    {#each $t('msg.products.SVQK.features').split('\n') as feature}
+      <li>{feature}</li>
+    {/each}
+  </ul>
 
   <p class="my-4">
     <GitHubButton repo="https://github.com/project-au-lait/svqk" />
   </p>
 
-  <p class="text-3xl mb-2">Quick Start</p>
+  <h2 class="text-3xl mb-2 text-gray-900">Quick Start</h2>
+
+  <p>{$t('msg.products.SVQK.usage.requiredSoftware')}</p>
+
+  <ul class="list-disc ml-8 my-3">
+    <li>Docker Desktop</li>
+    <li>JDK v21</li>
+    <li>Maven</li>
+    <li>Node.js v20</li>
+    <li>pnpm</li>
+    <li>Git</li>
+    <li>Visual Studio Code</li>
+  </ul>
+
   <p class="mb-2">{$t('msg.products.SVQK.usage.description')}</p>
 
   <Tabs>
-    <TabItem open title="Windows">
+    <TabItem open title="Windows (cmd)">
       <ol class="list-decimal px-8">
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf-8')}</p>
