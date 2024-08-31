@@ -1,4 +1,5 @@
 <script>
+  import GitHubButton from '$lib/GitHubButton.svelte';
   import { t } from '$lib/translations';
   import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
@@ -35,9 +36,13 @@
   {@html monokai}
 </svelte:head>
 
-<div class="container mx-auto lg:w-4/5">
+<div class="container mx-auto lg:w-4/5 px-5">
   <p class="text-4xl title-font font-medium my-4">SVQK</p>
   <p class="text-gray-600 mb-4">{@html $t('msg.products.SVQK.feature')}</p>
+
+  <p class="my-4">
+    <GitHubButton repo="https://github.com/project-au-lait/svqk" />
+  </p>
 
   <p class="text-3xl mb-2">Quick Start</p>
   <p class="mb-2">{$t('msg.products.SVQK.usage.description')}</p>
