@@ -1,11 +1,12 @@
 import { loadTranslations } from '$lib/translations';
+import type { LayoutLoad } from './$types';
+import Cookies from 'js-cookie';
 
-import type { LayoutServerLoad } from './$types';
+export const ssr = false;
 
-export const load: LayoutServerLoad = async () => {
-  const initLocale = 'en';
-  // TODO building mechanism to switch locale
-  await loadTranslations(initLocale);
+export const load: LayoutLoad = async () => {
+  const locale = Cookies.get('locale') ?? navigator.language;
+  await loadTranslations(locale);
 
   return {};
 };
