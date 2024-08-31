@@ -14,19 +14,19 @@
   const images = [
     {
       alt: 'setup',
-      src: '/svqk/setup.png',
+      src: '/images/svqk/setup.png',
     },
     {
       alt: 'pw-repo',
-      src: '/svqk/pw-repo.png',
+      src: '/images/svqk/pw-repo.png',
     },
     {
       alt: 'vscode-ws',
-      src: '/svqk/vscode-ws.png',
+      src: '/images/svqk/vscode-ws.png',
     },
     {
       alt: 'regist-issue',
-      src: '/svqk/regist-issue.png',
+      src: '/images/svqk/regist-issue.png',
     },
   ];
 </script>
