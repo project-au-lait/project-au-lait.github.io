@@ -36,7 +36,7 @@
   {@html monokai}
 </svelte:head>
 
-<div class="container mx-auto lg:w-4/5 px-5 text-gray-600 body-font">
+<div class="container mx-auto lg:w-4/5 sm:px-5 text-gray-600 body-font">
   <h1 class="text-4xl title-font font-medium text-gray-900 my-4">SVQK</h1>
   <ul class="list-disc ml-8">
     {#each $t('msg.products.SVQK.features').split('\n') as feature}
@@ -66,7 +66,7 @@
 
   <Tabs>
     <TabItem open title="Windows (cmd)">
-      <ol class="list-decimal px-8">
+      <ol class="list-decimal sm:px-8 px-2">
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf-8')}</p>
           <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>

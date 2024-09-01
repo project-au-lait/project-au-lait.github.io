@@ -5,7 +5,7 @@
   import Svqk from './Svqk.svelte';
 </script>
 
-<main class="min-h-screen px-16">
+<main class="min-h-screen sm:px-16 px-4">
   <Catchphrase />
   <Description />
   <Svqk />

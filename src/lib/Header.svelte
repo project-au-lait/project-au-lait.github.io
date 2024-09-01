@@ -31,7 +31,7 @@
     <ul class="flex space-x-3 items-center">
       <li>
         <Button
-          ><GlobeSolid />
+          ><GlobeSolid size="lg" />
           <ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button
         >
         <Dropdown bind:open={dropdownOpen}>

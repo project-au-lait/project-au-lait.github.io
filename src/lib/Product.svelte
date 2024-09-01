@@ -10,7 +10,7 @@
 
 <div class="product">
   <section class="text-gray-600 body-font overflow-hidden">
-    <div class="container px-5 py-16 mx-auto">
+    <div class="container sm:px-5 sm:py-16 py-8 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
           <h1 class="text-gray-900 text-4xl title-font font-medium mb-4">
