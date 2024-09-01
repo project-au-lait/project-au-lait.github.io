@@ -80,7 +80,7 @@
               code={`mvn archetype:generate ^
   -DarchetypeGroupId=dev.aulait.svqk ^
   -DarchetypeArtifactId=svqk-archetype-refimpl ^
-  -DarchetypeVersion=0.6 ^
+  -DarchetypeVersion=0.6.1 ^
   -DgroupId=my.group.id ^
   -DartifactId=my-artifactid ^
   -Dversion=1.0-SNAPSHOT`}
@@ -144,7 +144,7 @@
               code={`mvn archetype:generate \\
   -DarchetypeGroupId=dev.aulait.svqk \\
   -DarchetypeArtifactId=svqk-archetype-refimpl \\
-  -DarchetypeVersion=0.6 \\
+  -DarchetypeVersion=0.6.1 \\
   -DgroupId=my.group.id  \\
   -DartifactId=my-artifactid \\
   -Dversion=1.0-SNAPSHOT`}
