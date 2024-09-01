@@ -135,7 +135,7 @@
     </TabItem>
 
     <TabItem title="Mac">
-      <ol class="list-decimal px-8">
+      <ol class="list-decimal sm:px-8 px-2">
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.createPj')}</p>
           <CodeCopy>
