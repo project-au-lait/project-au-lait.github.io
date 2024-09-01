@@ -14,6 +14,13 @@
       "command": "pnpm",
       "args": ["build"],
       "problemMatcher": []
+    },
+    {
+      "label": "preview",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["preview", "--open"],
+      "problemMatcher": []
     }
   ]
 }
