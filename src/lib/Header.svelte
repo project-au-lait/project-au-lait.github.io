@@ -2,8 +2,16 @@
   import { locale, locales } from '$lib/translations';
   import { onDestroy } from 'svelte';
   import Cookies from 'js-cookie';
+  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { ChevronDownOutline, GlobeSolid } from 'flowbite-svelte-icons';
 
   const localeLabels: { [key: string]: string } = { en: 'English', ja: '日本語' };
+  let dropdownOpen = false;
+
+  function chooseItem(locVal: string) {
+    dropdownOpen = false;
+    locale.set(locVal);
+  }
 
   const unsubscribe = locale.subscribe(value => {
     Cookies.set('locale', value);
@@ -22,11 +30,17 @@
     </a>
     <ul class="flex space-x-3 items-center">
       <li>
-        <select class="text-xs" bind:value={$locale}>
+        <Button
+          ><GlobeSolid />
+          <ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button
+        >
+        <Dropdown bind:open={dropdownOpen}>
           {#each $locales as localeValue}
-            <option value={localeValue}>{localeLabels[localeValue]}</option>
+            <DropdownItem on:click={() => chooseItem(localeValue)}
+              >{localeLabels[localeValue]}</DropdownItem
+            >
           {/each}
-        </select>
+        </Dropdown>
       </li>
       <li>
         <a href="https://github.com/project-au-lait">
