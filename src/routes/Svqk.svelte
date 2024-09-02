@@ -1,6 +1,6 @@
 <script>
   import GitHubButton from '$lib/GitHubButton.svelte';
-  import { t } from '$lib/translations';
+  import { t, locale } from '$lib/translations';
   import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
   import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
@@ -8,6 +8,8 @@
   import Highlight from 'svelte-highlight';
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
+  import { Button } from 'flowbite-svelte';
+  import { BookOutline } from 'flowbite-svelte-icons';
 
   const qsStepClass = 'mt-4 mb-2';
 
@@ -29,6 +31,8 @@
       src: '/images/svqk/regist-issue.png',
     },
   ];
+
+  const version = '0.6.1';
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
@@ -46,6 +50,9 @@
 
   <p class="my-4">
     <GitHubButton repo="https://github.com/project-au-lait/svqk" />
+    <Button color="dark" href={`https://aulait.dev/svqk/${version}/${$locale}/`} target="_blank"
+      ><BookOutline />Docs</Button
+    >
   </p>
 
   <h2 class="text-3xl mb-2 text-gray-900">Quick Start</h2>
@@ -80,7 +87,7 @@
               code={`mvn archetype:generate ^
   -DarchetypeGroupId=dev.aulait.svqk ^
   -DarchetypeArtifactId=svqk-archetype-refimpl ^
-  -DarchetypeVersion=0.6.1 ^
+  -DarchetypeVersion=${version} ^
   -DgroupId=my.group.id ^
   -DartifactId=my-artifactid ^
   -Dversion=1.0-SNAPSHOT`}
@@ -144,7 +151,7 @@
               code={`mvn archetype:generate \\
   -DarchetypeGroupId=dev.aulait.svqk \\
   -DarchetypeArtifactId=svqk-archetype-refimpl \\
-  -DarchetypeVersion=0.6.1 \\
+  -DarchetypeVersion=${version} \\
   -DgroupId=my.group.id  \\
   -DartifactId=my-artifactid \\
   -Dversion=1.0-SNAPSHOT`}
