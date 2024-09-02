@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GithubSolid } from 'flowbite-svelte-icons';
+  import GithubSolid from 'flowbite-svelte-icons/GithubSolid.svelte';
   import { Button } from 'flowbite-svelte';
 
   export let repo: string;

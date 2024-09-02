@@ -9,7 +9,7 @@
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
   import { Button } from 'flowbite-svelte';
-  import { BookOutline } from 'flowbite-svelte-icons';
+  import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
 
   const qsStepClass = 'mt-4 mb-2';
 

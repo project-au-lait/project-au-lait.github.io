@@ -3,7 +3,8 @@
   import { onDestroy } from 'svelte';
   import Cookies from 'js-cookie';
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, GlobeSolid } from 'flowbite-svelte-icons';
+  import ChevronDownOutline from 'flowbite-svelte-icons/ChevronDownOutline.svelte';
+  import GlobeSolid from 'flowbite-svelte-icons/GlobeSolid.svelte';
 
   const localeLabels: { [key: string]: string } = { en: 'English', ja: '日本語' };
   let dropdownOpen = false;
