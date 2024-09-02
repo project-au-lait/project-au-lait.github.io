@@ -50,8 +50,11 @@
 
   <p class="my-4">
     <GitHubButton repo="https://github.com/project-au-lait/svqk" />
-    <Button color="dark" href={`https://aulait.dev/svqk/${version}/${$locale}/`} target="_blank"
-      ><BookOutline />Docs</Button
+    <Button
+      size="sm"
+      color="dark"
+      href={`https://aulait.dev/svqk/${version}/${$locale}/`}
+      target="_blank"><BookOutline class="me-2" />Docs</Button
     >
   </p>
 
