@@ -10,6 +10,7 @@
   import monokai from 'svelte-highlight/styles/monokai';
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
+  import { onMount } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
 
@@ -32,7 +33,16 @@
     },
   ];
 
-  const version = '0.6.1';
+  let version = 'CHECK_THE_LATEST_ON_GITHUB';
+
+  onMount(async () => {
+    const res = await fetch('https://api.github.com/repos/project-au-lait/svqk/releases/latest');
+
+    if (res.ok) {
+      const data = await res.json();
+      version = data.tag_name.replace(/^v/i, '');
+    }
+  });
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
