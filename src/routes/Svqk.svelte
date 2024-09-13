@@ -17,19 +17,19 @@
   const images = [
     {
       alt: 'setup',
-      src: '/images/svqk/setup.png',
+      src: '/images/svqk/setup.gif',
     },
     {
-      alt: 'pw-repo',
-      src: '/images/svqk/pw-repo.png',
+      alt: 'pw-test',
+      src: '/images/svqk/pw-test.gif',
     },
     {
-      alt: 'vscode-ws',
-      src: '/images/svqk/vscode-ws.png',
+      alt: 'open-ws',
+      src: '/images/svqk/open-ws.gif',
     },
     {
-      alt: 'regist-issue',
-      src: '/images/svqk/regist-issue.png',
+      alt: 'front-demo',
+      src: '/images/svqk/front-demo.gif',
     },
   ];
 
