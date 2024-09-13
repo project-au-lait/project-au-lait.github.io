@@ -20,16 +20,16 @@
       src: '/images/svqk/setup.gif',
     },
     {
-      alt: 'pw-test',
-      src: '/images/svqk/pw-test.gif',
-    },
-    {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
     },
     {
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
+    },
+    {
+      alt: 'pw-test',
+      src: '/images/svqk/pw-test.gif',
     },
   ];
 
