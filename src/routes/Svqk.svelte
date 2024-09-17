@@ -118,12 +118,12 @@
             <Highlight
               language={dos}
               code={`mvn archetype:generate ^
-      -DarchetypeGroupId=dev.aulait.svqk ^
-      -DarchetypeArtifactId=svqk-archetype-refimpl ^
-      -DarchetypeVersion=${version} ^
-      -DgroupId=my.group.id ^
-      -DartifactId=my-artifactid ^
-      -Dversion=1.0-SNAPSHOT`}
+  -DarchetypeGroupId=dev.aulait.svqk ^
+  -DarchetypeArtifactId=svqk-archetype-refimpl ^
+  -DarchetypeVersion=${version} ^
+  -DgroupId=my.group.id ^
+  -DartifactId=my-artifactid ^
+  -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
@@ -182,12 +182,12 @@
             <Highlight
               language={bash}
               code={`mvn archetype:generate \\
-      -DarchetypeGroupId=dev.aulait.svqk \\
-      -DarchetypeArtifactId=svqk-archetype-refimpl \\
-      -DarchetypeVersion=${version} \\
-      -DgroupId=my.group.id  \\
-      -DartifactId=my-artifactid \\
-      -Dversion=1.0-SNAPSHOT`}
+  -DarchetypeGroupId=dev.aulait.svqk \\
+  -DarchetypeArtifactId=svqk-archetype-refimpl \\
+  -DarchetypeVersion=${version} \\
+  -DgroupId=my.group.id  \\
+  -DartifactId=my-artifactid \\
+  -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
