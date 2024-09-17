@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import GitHubButton from '$lib/GitHubButton.svelte';
   import { t, locale } from '$lib/translations';
-  import Autoplay from 'embla-carousel-autoplay';
-  import emblaCarouselSvelte from 'embla-carousel-svelte';
+  import EmblaCarousel from 'embla-carousel';
+  import type { EmblaCarouselType } from 'embla-carousel';
   import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
   import { CodeCopy } from 'svelte-code-copy';
   import Highlight from 'svelte-highlight';
@@ -10,7 +10,7 @@
   import monokai from 'svelte-highlight/styles/monokai';
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
 
@@ -34,6 +34,8 @@
   ];
 
   let version = 'CHECK_THE_LATEST_ON_GITHUB';
+  let emblaNode: HTMLElement | null = null;
+  let embla: EmblaCarouselType | null = null;
 
   onMount(async () => {
     const res = await fetch('https://api.github.com/repos/project-au-lait/svqk/releases/latest');
@@ -42,7 +44,25 @@
       const data = await res.json();
       version = data.tag_name.replace(/^v/i, '');
     }
+
+    if (emblaNode) {
+      embla = EmblaCarousel(emblaNode, { loop: true });
+    }
   });
+
+  onDestroy(() => {
+    if (embla) {
+      embla.destroy();
+    }
+  });
+
+  function scrollPrev() {
+    embla?.scrollPrev();
+  }
+
+  function scrollNext() {
+    embla?.scrollNext();
+  }
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
@@ -98,12 +118,12 @@
             <Highlight
               language={dos}
               code={`mvn archetype:generate ^
-  -DarchetypeGroupId=dev.aulait.svqk ^
-  -DarchetypeArtifactId=svqk-archetype-refimpl ^
-  -DarchetypeVersion=${version} ^
-  -DgroupId=my.group.id ^
-  -DartifactId=my-artifactid ^
-  -Dversion=1.0-SNAPSHOT`}
+      -DarchetypeGroupId=dev.aulait.svqk ^
+      -DarchetypeArtifactId=svqk-archetype-refimpl ^
+      -DarchetypeVersion=${version} ^
+      -DgroupId=my.group.id ^
+      -DartifactId=my-artifactid ^
+      -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
@@ -162,12 +182,12 @@
             <Highlight
               language={bash}
               code={`mvn archetype:generate \\
-  -DarchetypeGroupId=dev.aulait.svqk \\
-  -DarchetypeArtifactId=svqk-archetype-refimpl \\
-  -DarchetypeVersion=${version} \\
-  -DgroupId=my.group.id  \\
-  -DartifactId=my-artifactid \\
-  -Dversion=1.0-SNAPSHOT`}
+      -DarchetypeGroupId=dev.aulait.svqk \\
+      -DarchetypeArtifactId=svqk-archetype-refimpl \\
+      -DarchetypeVersion=${version} \\
+      -DgroupId=my.group.id  \\
+      -DartifactId=my-artifactid \\
+      -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
         </li>
@@ -221,10 +241,7 @@
   </Tabs>
 
   <!-- carousel -->
-  <div
-    class="overflow-hidden max-w-4xl mx-auto my-4"
-    use:emblaCarouselSvelte={{ options: { loop: true }, plugins: [Autoplay({ delay: 5000 })] }}
-  >
+  <div class="embla overflow-hidden max-w-4xl mx-auto my-4" bind:this={emblaNode}>
     <div class="flex items-center">
       {#each images as img}
         <div class="min-w-0" style="flex: 0 0 100%;">
@@ -232,5 +249,11 @@
         </div>
       {/each}
     </div>
+  </div>
+
+  <!-- Previous and Next Button -->
+  <div class="flex justify-center my-4">
+    <button on:click={scrollPrev} class="px-4 py-2 bg-gray-300 rounded-lg mr-2">Previous</button>
+    <button on:click={scrollNext} class="px-4 py-2 bg-gray-300 rounded-lg">Next</button>
   </div>
 </div>
