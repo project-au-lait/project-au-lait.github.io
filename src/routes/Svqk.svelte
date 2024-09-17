@@ -34,8 +34,8 @@
   ];
 
   let version = 'CHECK_THE_LATEST_ON_GITHUB';
-  let emblaNode: HTMLElement | null = null;
-  let embla: EmblaCarouselType | null = null;
+  let emblaNode: HTMLElement;
+  let embla: EmblaCarouselType;
 
   onMount(async () => {
     const res = await fetch('https://api.github.com/repos/project-au-lait/svqk/releases/latest');
