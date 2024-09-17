@@ -10,7 +10,7 @@
   import monokai from 'svelte-highlight/styles/monokai';
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
 
@@ -47,12 +47,6 @@
 
     if (emblaNode) {
       embla = EmblaCarousel(emblaNode, { loop: true });
-    }
-  });
-
-  onDestroy(() => {
-    if (embla) {
-      embla.destroy();
     }
   });
 
