@@ -47,6 +47,7 @@
   },
   "type": "module",
   "dependencies": {
+    "embla-carousel": "^8.3.0",
     "js-cookie": "^3.0.5"
   }
 }
