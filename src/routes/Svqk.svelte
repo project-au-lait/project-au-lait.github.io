@@ -239,7 +239,7 @@
 
   <div class="flex justify-center my-4">
     <button on:click={() => embla?.scrollPrev()} class="px-4 py-2 rounded-lg mr-2">
-      <img src="./arrow-back.svg" alt="next" />
+      <img src="./arrow-back.svg" alt="back" />
     </button>
     <button on:click={() => embla?.scrollNext()} class="px-4 py-2 rounded-lg mr-2">
       <img src="./arrow-foward.svg" alt="forward" />
