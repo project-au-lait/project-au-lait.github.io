@@ -237,13 +237,12 @@
     </div>
   </div>
 
-  <!-- Previous and Next Button -->
   <div class="flex justify-center my-4">
-    <button on:click={() => embla?.scrollPrev()} class="px-4 py-2 bg-gray-300 rounded-lg mr-2"
-      >Previous</button
-    >
-    <button on:click={() => embla?.scrollNext()} class="px-4 py-2 bg-gray-300 rounded-lg"
-      >Next</button
-    >
+    <button on:click={() => embla?.scrollPrev()} class="px-4 py-2 rounded-lg mr-2">
+      <img src="./arrow-back.svg" alt="next" />
+    </button>
+    <button on:click={() => embla?.scrollNext()} class="px-4 py-2 rounded-lg mr-2">
+      <img src="./arrow-foward.svg" alt="forward" />
+    </button>
   </div>
 </div>
