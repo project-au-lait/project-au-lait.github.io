@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      embla-carousel:
+        specifier: ^8.3.0
+        version: 8.3.0
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -39,12 +42,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.20(postcss@8.4.41)
-      embla-carousel-autoplay:
-        specifier: ^8.2.0
-        version: 8.2.0(embla-carousel@8.2.0)
-      embla-carousel-svelte:
-        specifier: ^8.2.0
-        version: 8.2.0(svelte@4.2.18)
       eslint:
         specifier: ^9.0.0
         version: 9.9.0(jiti@1.21.6)
@@ -759,23 +756,8 @@ packages:
   electron-to-chromium@1.5.6:
     resolution: {integrity: sha512-jwXWsM5RPf6j9dPYzaorcBSUg6AiqocPEyMpkchkvntaH9HGfOOMZwxMJjDY/XEs3T5dM7uyH1VhRMkqUU9qVw==}
 
-  embla-carousel-autoplay@8.2.0:
-    resolution: {integrity: sha512-+u5I5h27tnEl9D5IiY4n3Q5DrT2XuNggZ6P/785cETYZslEVGHPevbyzuryxGNi1taXfrgvwrbMnisfUyUmytw==}
-    peerDependencies:
-      embla-carousel: 8.2.0
-
-  embla-carousel-reactive-utils@8.2.0:
-    resolution: {integrity: sha512-ZdaPNgMydkPBiDRUv+wRIz3hpZJ3LKrTyz+XWi286qlwPyZFJDjbzPBiXnC3czF9N/nsabSc7LTRvGauUzwKEg==}
-    peerDependencies:
-      embla-carousel: 8.2.0
-
-  embla-carousel-svelte@8.2.0:
-    resolution: {integrity: sha512-0llMmUWjBxPfGa+AZd0gHjNiaCbQWrMDgabhM99DoH19yGTatlzVucH/NjPXXSivJ2N2Mn90Bq+4icwBxaRolQ==}
-    peerDependencies:
-      svelte: ^3.49.0 || ^4.0.0
-
-  embla-carousel@8.2.0:
-    resolution: {integrity: sha512-rf2GIX8rab9E6ZZN0Uhz05746qu2KrDje9IfFyHzjwxLwhvGjUt6y9+uaY1Sf+B0OPSa3sgas7BE2hWZCtopTA==}
+  embla-carousel@8.3.0:
+    resolution: {integrity: sha512-Ve8dhI4w28qBqR8J+aMtv7rLK89r1ZA5HocwFz6uMB/i5EiC7bGI7y+AM80yAVUJw3qqaZYK7clmZMUR8kM3UA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2321,21 +2303,7 @@ snapshots:
 
   electron-to-chromium@1.5.6: {}
 
-  embla-carousel-autoplay@8.2.0(embla-carousel@8.2.0):
-    dependencies:
-      embla-carousel: 8.2.0
-
-  embla-carousel-reactive-utils@8.2.0(embla-carousel@8.2.0):
-    dependencies:
-      embla-carousel: 8.2.0
-
-  embla-carousel-svelte@8.2.0(svelte@4.2.18):
-    dependencies:
-      embla-carousel: 8.2.0
-      embla-carousel-reactive-utils: 8.2.0(embla-carousel@8.2.0)
-      svelte: 4.2.18
-
-  embla-carousel@8.2.0: {}
+  embla-carousel@8.3.0: {}
 
   emoji-regex@8.0.0: {}
 

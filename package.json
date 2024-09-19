@@ -22,8 +22,6 @@
     "@types/eslint": "^8.56.7",
     "@types/js-cookie": "^3.0.6",
     "autoprefixer": "^10.4.19",
-    "embla-carousel-autoplay": "^8.2.0",
-    "embla-carousel-svelte": "^8.2.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.36.0",
@@ -47,6 +45,7 @@
   },
   "type": "module",
   "dependencies": {
+    "embla-carousel": "^8.3.0",
     "js-cookie": "^3.0.5"
   }
 }

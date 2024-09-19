@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import GitHubButton from '$lib/GitHubButton.svelte';
   import { t, locale } from '$lib/translations';
-  import Autoplay from 'embla-carousel-autoplay';
-  import emblaCarouselSvelte from 'embla-carousel-svelte';
+  import EmblaCarousel from 'embla-carousel';
+  import type { EmblaCarouselType } from 'embla-carousel';
   import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
   import { CodeCopy } from 'svelte-code-copy';
   import Highlight from 'svelte-highlight';
@@ -20,10 +20,6 @@
       src: '/images/svqk/setup.gif',
     },
     {
-      alt: 'pw-test',
-      src: '/images/svqk/pw-test.gif',
-    },
-    {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
     },
@@ -31,9 +27,15 @@
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
     },
+    {
+      alt: 'pw-test',
+      src: '/images/svqk/pw-test.gif',
+    },
   ];
 
   let version = 'CHECK_THE_LATEST_ON_GITHUB';
+  let emblaNode: HTMLElement;
+  let embla: EmblaCarouselType;
 
   onMount(async () => {
     const res = await fetch('https://api.github.com/repos/project-au-lait/svqk/releases/latest');
@@ -41,6 +43,10 @@
     if (res.ok) {
       const data = await res.json();
       version = data.tag_name.replace(/^v/i, '');
+    }
+
+    if (emblaNode) {
+      embla = EmblaCarousel(emblaNode, { loop: true });
     }
   });
 </script>
@@ -221,10 +227,7 @@
   </Tabs>
 
   <!-- carousel -->
-  <div
-    class="overflow-hidden max-w-4xl mx-auto my-4"
-    use:emblaCarouselSvelte={{ options: { loop: true }, plugins: [Autoplay({ delay: 5000 })] }}
-  >
+  <div class="embla overflow-hidden max-w-4xl mx-auto my-4" bind:this={emblaNode}>
     <div class="flex items-center">
       {#each images as img}
         <div class="min-w-0" style="flex: 0 0 100%;">
@@ -232,5 +235,14 @@
         </div>
       {/each}
     </div>
+  </div>
+
+  <div class="flex justify-center my-4">
+    <button on:click={() => embla?.scrollPrev()} class="px-4 py-2 rounded-lg mr-2">
+      <img src="./arrow-back.svg" alt="back" />
+    </button>
+    <button on:click={() => embla?.scrollNext()} class="px-4 py-2 rounded-lg mr-2">
+      <img src="./arrow-foward.svg" alt="forward" />
+    </button>
   </div>
 </div>
