@@ -82,7 +82,7 @@
     <li>Docker Desktop</li>
     <li>JDK v21</li>
     <li>Maven</li>
-    <li>Node.js v20</li>
+    <li>Node.js v22</li>
     <li>pnpm</li>
     <li>Git</li>
     <li>Visual Studio Code</li>
