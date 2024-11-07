@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import GitHubButton from './GitHubButton.svelte';
 
   export let name;
@@ -6,6 +6,9 @@
   export let umlPath;
   export let usage;
   export let repo;
+
+  let mounted: boolean;
+  setTimeout(() => (mounted = typeof window !== 'undefined'));
 </script>
 
 <div class="product">
@@ -17,8 +20,10 @@
             {name}
           </h1>
           <div class="mb-6">
-            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-            <p class="leading-relaxed mb-2">{@html description}</p>
+            <p class="leading-relaxed mb-2">
+              <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+              {#key mounted}{@html description}{/key}
+            </p>
           </div>
           {#if usage}
             <div class="mb-6">
