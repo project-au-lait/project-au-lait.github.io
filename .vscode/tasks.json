@@ -13,6 +13,7 @@
       "type": "shell",
       "command": "pnpm",
       "args": ["build"],
+      "options": { "env": { "LANG": "en" } },
       "problemMatcher": []
     },
     {
