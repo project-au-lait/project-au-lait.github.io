@@ -52,7 +52,10 @@
     }
   });
 
-  let isOpen = true;
+  let accordionStates = [false, false, false, false];
+  const toggleAccordion = (index: number) => {
+    accordionStates[index] = !accordionStates[index];
+  };
   const createReferenceLink = (href: string, label: string) => {
     return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">${label}</a>`;
   };
@@ -109,7 +112,7 @@
           <p class={qsStepClass}>
             {$t('msg.products.SVQK.usage.createPj')}
             <Button
-              on:click={() => (isOpen = !isOpen)}
+              on:click={() => toggleAccordion(0)}
               pill={true}
               outline={true}
               class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
@@ -130,7 +133,7 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
-          {#if isOpen}
+          {#if accordionStates[0]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.archetype.supplement')}
               <ul class="list-disc ml-8 my-3">
@@ -185,10 +188,46 @@
         </li>
 
         <li>
-          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
-          <CodeCopy
-            ><Highlight language={dos} code={'code my-artifactid.code-workspace'} /></CodeCopy
-          >
+          <p class={qsStepClass}>
+            {$t('msg.products.SVQK.usage.openWs')}
+            <Button
+              on:click={() => toggleAccordion(1)}
+              pill={true}
+              outline={true}
+              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
+              size="sm"
+            >
+              <InfoCircleOutline />
+            </Button>
+          </p>
+          <CodeCopy>
+            <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
+          </CodeCopy>
+          {#if accordionStates[1]}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.structure')}
+              <CodeCopy>
+                <Highlight
+                  language={dos}
+                  code={`📁 my-artifactid 
+├── 📁 my-artifactid-back  <------ Quarkus (Maven)
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-container  <- Docker
+│   ├── 📄 compose.yml
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-e2etest  <--- Playwright (pnpm)
+│   ├── 📄 package.json
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-frontend  <----- SvelteKit (pnpm)
+│   ├── 📄 package.json
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-migration  <- Flyway (Maven)
+│   └── 📄 pom.xml
+└── 📄 pom.xml`}
+                />
+              </CodeCopy>
+            </div>
+          {/if}
         </li>
 
         <li>
@@ -227,7 +266,18 @@
     <TabItem title="Mac">
       <ol class="list-decimal sm:px-8 px-2">
         <li>
-          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.createPj')}</p>
+          <p class={qsStepClass}>
+            {$t('msg.products.SVQK.usage.createPj')}
+            <Button
+              on:click={() => toggleAccordion(2)}
+              pill={true}
+              outline={true}
+              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
+              size="sm"
+            >
+              <InfoCircleOutline />
+            </Button>
+          </p>
           <CodeCopy>
             <Highlight
               language={bash}
@@ -240,6 +290,52 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
+          {#if accordionStates[2]}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.archetype.supplement')}
+              <ul class="list-disc ml-8 my-3">
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.refimpl')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.refimpl', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.arch')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.arch', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.skeleton')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.skeleton', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          {/if}
         </li>
 
         <li>
@@ -250,10 +346,46 @@
         </li>
 
         <li>
-          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.openWs')}</p>
-          <CodeCopy
-            ><Highlight language={bash} code={'code my-artifactid.code-workspace'} /></CodeCopy
-          >
+          <p class={qsStepClass}>
+            {$t('msg.products.SVQK.usage.openWs')}
+            <Button
+              on:click={() => toggleAccordion(3)}
+              pill={true}
+              outline={true}
+              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
+              size="sm"
+            >
+              <InfoCircleOutline />
+            </Button>
+          </p>
+          <CodeCopy>
+            <Highlight language={bash} code={'code my-artifactid.code-workspace'} />
+          </CodeCopy>
+          {#if accordionStates[3]}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.structure')}
+              <CodeCopy>
+                <Highlight
+                  language={dos}
+                  code={`📁 my-artifactid 
+├── 📁 my-artifactid-back  <------ Quarkus (Maven)
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-container  <- Docker
+│   ├── 📄 compose.yml
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-e2etest  <--- Playwright (pnpm)
+│   ├── 📄 package.json
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-frontend  <----- SvelteKit (pnpm)
+│   ├── 📄 package.json
+│   └── 📄 pom.xml
+├── 📁 my-artifactid-migration  <- Flyway (Maven)
+│   └── 📄 pom.xml
+└── 📄 pom.xml`}
+                />
+              </CodeCopy>
+            </div>
+          {/if}
         </li>
 
         <li>

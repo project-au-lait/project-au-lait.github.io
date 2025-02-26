@@ -14,6 +14,7 @@
         "openWs": "Open the created project as a VSCode workspace.",
         "runTask": "Start the Backend and Frontend applications using VSCode Task.",
         "access": "Once the Frontend application is started, the following URL will be displayed in the browser.",
+        "structure": "The above mvn archetype:generate command will generate a project with the following configuration.",
         "archetype": {
           "supplement": "To start developing with SVQK, create a project using the Maven Archetype provided by SVQK. The following three Archetypes are available.",
           "referenceUrl": "https://github.com/project-au-lait/svqk/tree/main?tab=readme-ov-file#svqk",
