@@ -20,22 +20,22 @@
     {
       alt: 'setup',
       src: '/images/svqk/setup.gif',
-      message: $t('msg.products.SVQK.usage.message.setup'),
+      message: 'msg.products.SVQK.usage.message.setup',
     },
     {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
-      message: $t('msg.products.SVQK.usage.message.openWs'),
+      message: 'msg.products.SVQK.usage.message.openWs',
     },
     {
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
-      message: $t('msg.products.SVQK.usage.message.frontDemo'),
+      message: 'msg.products.SVQK.usage.message.frontDemo',
     },
     {
       alt: 'pw-test',
       src: '/images/svqk/pw-test.gif',
-      message: $t('msg.products.SVQK.usage.message.pwTest'),
+      message: 'msg.products.SVQK.usage.message.pwTest',
     },
   ];
 
@@ -432,7 +432,7 @@
       {#each images as img}
         <div class="min-w-0" style="flex: 0 0 100%;">
           <img src={img.src} alt={img.alt} class="rounded-lg" />
-          <p class="pt-2">{img.message}</p>
+          <p class="pt-2">{$t(img.message)}</p>
         </div>
       {/each}
     </div>

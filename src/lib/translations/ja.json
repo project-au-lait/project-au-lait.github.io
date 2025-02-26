@@ -34,7 +34,7 @@
         "message": {
           "setup": "セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。",
           "openWs": "VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。",
-          "frontDemo": "Backend/Frontendサーバーの起動が、VS Codeから実行できます。",
+          "frontDemo": "Backend / Frontendサーバーの起動が、VS Codeから実行できます。",
           "pwTest": "PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。"
         }
       }
