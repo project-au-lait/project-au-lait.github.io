@@ -13,7 +13,22 @@
         "setup": "Move to the directory of the created project and execute the setup command.",
         "openWs": "Open the created project as a VSCode workspace.",
         "runTask": "Start the Backend and Frontend applications using VSCode Task.",
-        "access": "Once the Frontend application is started, the following URL will be displayed in the browser."
+        "access": "Once the Frontend application is started, the following URL will be displayed in the browser.",
+        "archetype": {
+          "supplement": "To start developing with SVQK, create a project using the Maven Archetype provided by SVQK. The following three Archetypes are available.",
+          "referenceUrl": "https://github.com/project-au-lait/svqk/tree/main?tab=readme-ov-file#svqk",
+          "referenceLabel": "reference implementations",
+          "type": {
+            "refimpl": "svqk-archetype-refimpl",
+            "arch": "svqk-archetype-arch",
+            "skeleton": "svqk-archetype-skeleton"
+          },
+          "description": {
+            "refimpl": "Archetype including all {{ referenceLabel }}.",
+            "arch": "This Archetype includes the common functions of the {{ referenceLabel }}, excluding screen-specific ones.",
+            "skeleton": "This Archetype contains only those {{ referenceLabel }} that are used for communication checks, excluding all common functions and screen-specific items."
+          }
+        }
       }
     },
 

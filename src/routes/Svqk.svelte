@@ -8,8 +8,10 @@
   import Highlight from 'svelte-highlight';
   import { bash, dos } from 'svelte-highlight/languages';
   import monokai from 'svelte-highlight/styles/monokai';
+  import { slide } from 'svelte/transition';
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
+  import InfoCircleOutline from 'flowbite-svelte-icons/InfoCircleOutline.svelte';
   import { onMount } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
@@ -49,6 +51,11 @@
       embla = EmblaCarousel(emblaNode, { loop: true });
     }
   });
+
+  let isOpen = true;
+  const createReferenceLink = (href: string, label: string) => {
+    return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">${label}</a>`;
+  };
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
@@ -92,14 +99,25 @@
 
   <Tabs>
     <TabItem open title="Windows (cmd)">
-      <ol class="list-decimal sm:px-8 px-2">
+      <ol class="list-decimal sm:px-8 px-3">
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf-8')}</p>
           <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
         </li>
 
         <li>
-          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.createPj')}</p>
+          <p class={qsStepClass}>
+            {$t('msg.products.SVQK.usage.createPj')}
+            <Button
+              on:click={() => (isOpen = !isOpen)}
+              pill={true}
+              outline={true}
+              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
+              size="sm"
+            >
+              <InfoCircleOutline />
+            </Button>
+          </p>
           <CodeCopy>
             <Highlight
               language={dos}
@@ -112,6 +130,52 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
+          {#if isOpen}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.archetype.supplement')}
+              <ul class="list-disc ml-8 my-3">
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.refimpl')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.refimpl', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.arch')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.arch', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  {$t('msg.products.SVQK.usage.archetype.type.skeleton')}
+                  <ul class="list-disc ml-4">
+                    <li>
+                      {@html $t('msg.products.SVQK.usage.archetype.description.skeleton', {
+                        referenceLabel: createReferenceLink(
+                          $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+                          $t('msg.products.SVQK.usage.archetype.referenceLabel')
+                        ),
+                      })}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          {/if}
         </li>
 
         <li>
