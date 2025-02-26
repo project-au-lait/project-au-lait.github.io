@@ -29,6 +29,12 @@
             "arch": "This Archetype includes the common functions of the {{ referenceLabel }}, excluding screen-specific ones.",
             "skeleton": "This Archetype contains only those {{ referenceLabel }} that are used for communication checks, excluding all common functions and screen-specific items."
           }
+        },
+        "message": {
+          "setup": "A single setup command can perform all necessary project builds at once.",
+          "openWs": "When you open a project in VS Code, the DB container is automatically started.",
+          "frontDemo": "Backend/Frontend servers can be started from VS Code.",
+          "pwTest": "End to End Test can be executed by Playwright and Test Report can be output."
         }
       }
     },

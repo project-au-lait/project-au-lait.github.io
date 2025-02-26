@@ -30,6 +30,12 @@
             "arch": "{{ referenceLabel }} の内、画面固有のものを除き、共通機能のものを含んだ Archetypeです。",
             "skeleton": "{{ referenceLabel }} の内、共通機能・画面固有のものを全て除き、疎通確認用のもののみを含んだ Archetypeです。"
           }
+        },
+        "message": {
+          "setup": "セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。",
+          "openWs": "VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。",
+          "frontDemo": "Backend/Frontendサーバーの起動が、VS Codeから実行できます。",
+          "pwTest": "PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。"
         }
       }
     },

@@ -20,18 +20,22 @@
     {
       alt: 'setup',
       src: '/images/svqk/setup.gif',
+      message: 'セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。',
     },
     {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
+      message: 'VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。',
     },
     {
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
+      message: 'Backend/Frontendサーバーの起動が、VS Codeから実行できます。',
     },
     {
       alt: 'pw-test',
       src: '/images/svqk/pw-test.gif',
+      message: 'PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。',
     },
   ];
 
@@ -428,6 +432,7 @@
       {#each images as img}
         <div class="min-w-0" style="flex: 0 0 100%;">
           <img src={img.src} alt={img.alt} class="rounded-lg" />
+          <p class="pt-2">{img.message}</p>
         </div>
       {/each}
     </div>
