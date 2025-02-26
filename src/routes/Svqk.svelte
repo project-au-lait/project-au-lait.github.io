@@ -20,22 +20,22 @@
     {
       alt: 'setup',
       src: '/images/svqk/setup.gif',
-      message: 'セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。',
+      message: $t('msg.products.SVQK.usage.message.setup'),
     },
     {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
-      message: 'VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。',
+      message: $t('msg.products.SVQK.usage.message.openWs'),
     },
     {
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
-      message: 'Backend/Frontendサーバーの起動が、VS Codeから実行できます。',
+      message: $t('msg.products.SVQK.usage.message.frontDemo'),
     },
     {
       alt: 'pw-test',
       src: '/images/svqk/pw-test.gif',
-      message: 'PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。',
+      message: $t('msg.products.SVQK.usage.message.pwTest'),
     },
   ];
 
