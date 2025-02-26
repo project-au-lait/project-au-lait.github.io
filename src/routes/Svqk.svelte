@@ -63,7 +63,7 @@
   {@html monokai}
 </svelte:head>
 
-<div class="container mx-auto lg:w-4/5 sm:px-5 text-gray-600 body-font">
+<div id="svqk" class="container mx-auto lg:w-4/5 sm:px-5 text-gray-600 body-font section">
   <h1 class="text-4xl title-font font-medium text-gray-900 my-4">SVQK</h1>
   <ul class="list-disc ml-8">
     {#each $t('msg.products.SVQK.features').split('\n') as feature}
@@ -310,3 +310,9 @@
     </button>
   </div>
 </div>
+
+<style>
+  .section {
+    scroll-margin-top: 6rem; /* ヘッダーの高さ + 余裕 */
+  }
+</style>
