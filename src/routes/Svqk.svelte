@@ -11,7 +11,7 @@
   import { slide } from 'svelte/transition';
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
-  import InfoCircleOutline from 'flowbite-svelte-icons/InfoCircleOutline.svelte';
+  import LinkOutline from 'flowbite-svelte-icons/LinkOutline.svelte';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
 
   import { onMount } from 'svelte';
@@ -73,7 +73,12 @@
 </svelte:head>
 
 <div id="svqk" class="container mx-auto lg:w-4/5 sm:px-5 text-gray-600 body-font section">
-  <h1 class="text-4xl title-font font-medium text-gray-900 my-4">SVQK</h1>
+  <div class="section-title">
+    <h1 class="text-4xl title-font font-medium text-gray-900 my-4">SVQK</h1>
+    <a class="section-link-icon" href="#svqk">
+      <LinkOutline size="xl" />
+    </a>
+  </div>
   <ul class="list-disc ml-8">
     {#each $t('msg.products.SVQK.features').split('\n') as feature}
       <li>{feature}</li>
@@ -131,7 +136,7 @@
             />
           </CodeCopy>
           <div on:click={() => toggleAccordion(0)} class="accordion-header">
-            <div class="icon-wrapper" class:rotated={accordionStates[0]}>
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[0]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.archetype')}
@@ -198,7 +203,7 @@
             <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
           <div on:click={() => toggleAccordion(1)} class="accordion-header">
-            <div class="icon-wrapper" class:rotated={accordionStates[1]}>
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[1]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.structure')}
@@ -280,7 +285,7 @@
             />
           </CodeCopy>
           <div on:click={() => toggleAccordion(2)} class="accordion-header">
-            <div class="icon-wrapper" class:rotated={accordionStates[2]}>
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[2]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.archetype')}
@@ -348,7 +353,7 @@
             <Highlight language={bash} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
           <div on:click={() => toggleAccordion(3)} class="accordion-header">
-            <div class="icon-wrapper" class:rotated={accordionStates[3]}>
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[3]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.structure')}
@@ -439,6 +444,21 @@
     scroll-margin-top: 6rem; /* ヘッダーの高さ + 余裕 */
   }
 
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .section-link-icon {
+    opacity: 0;
+  }
+
+  .section-title:hover .section-link-icon {
+    opacity: 1;
+  }
+
   .accordion-header {
     display: flex;
     align-items: center;
@@ -447,7 +467,7 @@
     gap: 6px;
   }
 
-  .icon-wrapper {
+  .accordion-icon-wrapper {
     transition: transform 0.3s ease;
   }
 
