@@ -214,7 +214,7 @@
                 <Highlight
                   language={dos}
                   code={`📁 my-artifactid 
-├── 📁 my-artifactid-back  <------ Quarkus (Maven)
+├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
 │   ├── 📄 compose.yml
@@ -372,7 +372,7 @@
                 <Highlight
                   language={dos}
                   code={`📁 my-artifactid 
-├── 📁 my-artifactid-back  <------ Quarkus (Maven)
+├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
 │   ├── 📄 compose.yml
