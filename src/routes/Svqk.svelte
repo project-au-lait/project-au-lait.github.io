@@ -63,7 +63,7 @@
     accordionStates[index] = !accordionStates[index];
   };
   const createReferenceLink = (href: string, label: string) => {
-    return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">${label}</a>`;
+    return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">${label}</a>`;
   };
 </script>
 
