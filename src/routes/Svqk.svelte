@@ -210,10 +210,9 @@
           {#if accordionStates[1]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
-              <CodeCopy>
-                <Highlight
-                  language={dos}
-                  code={`📁 my-artifactid 
+              <Highlight
+                language={dos}
+                code={`📁 my-artifactid 
 ├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
@@ -228,8 +227,7 @@
 ├── 📁 my-artifactid-migration  <- Flyway (Maven)
 │   └── 📄 pom.xml
 └── 📄 pom.xml`}
-                />
-              </CodeCopy>
+              />
             </div>
           {/if}
         </li>
@@ -368,10 +366,9 @@
           {#if accordionStates[3]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
-              <CodeCopy>
-                <Highlight
-                  language={dos}
-                  code={`📁 my-artifactid 
+              <Highlight
+                language={dos}
+                code={`📁 my-artifactid 
 ├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
@@ -386,8 +383,7 @@
 ├── 📁 my-artifactid-migration  <- Flyway (Maven)
 │   └── 📄 pom.xml
 └── 📄 pom.xml`}
-                />
-              </CodeCopy>
+              />
             </div>
           {/if}
         </li>
