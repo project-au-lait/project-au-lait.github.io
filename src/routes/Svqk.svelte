@@ -142,7 +142,7 @@
               {$t('msg.products.SVQK.usage.archetype.supplement')}
               <ul class="list-disc ml-8 my-3">
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.refimpl')}
+                  <b>svqk-archetype-refimpl</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.refimpl', {
@@ -155,7 +155,7 @@
                   </ul>
                 </li>
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.arch')}
+                  <b>svqk-archetype-arch</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.arch', {
@@ -168,7 +168,7 @@
                   </ul>
                 </li>
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.skeleton')}
+                  <b>svqk-archetype-skeleton</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.skeleton', {
@@ -299,7 +299,7 @@
               {$t('msg.products.SVQK.usage.archetype.supplement')}
               <ul class="list-disc ml-8 my-3">
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.refimpl')}
+                  <b>svqk-archetype-refimpl</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.refimpl', {
@@ -312,7 +312,7 @@
                   </ul>
                 </li>
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.arch')}
+                  <b>svqk-archetype-arch</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.arch', {
@@ -325,7 +325,7 @@
                   </ul>
                 </li>
                 <li>
-                  {$t('msg.products.SVQK.usage.archetype.type.skeleton')}
+                  <b>svqk-archetype-skeleton</b>
                   <ul class="list-disc ml-4">
                     <li>
                       {@html $t('msg.products.SVQK.usage.archetype.description.skeleton', {
