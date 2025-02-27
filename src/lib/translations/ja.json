@@ -14,7 +14,28 @@
         "setup": "作成したプロジェクトのディレクトリに移動し、セットアップコマンドを実行します。",
         "openWs": "作成したプロジェクトをVSCodeワークスペースとして開きます。",
         "runTask": "VSCode TaskでBackendアプリケーションとFrontendアプリケーションを起動します。",
-        "access": "Frontendアプリケーションが起動すると、ブラウザで以下のURLが表示されます。"
+        "access": "Frontendアプリケーションが起動すると、ブラウザで以下のURLが表示されます。",
+        "structure": "上記の \"mvn archetype:generate\" コマンドを実行すると、以下の構成でプロジェクトが生成されます。",
+        "archetype": {
+          "supplement": "SVQK を使用して開発を始めるには、SVQK が提供する Maven Archetype を使用してプロジェクトを作成します。 以下の 3 種類の Archetype が使用できます。",
+          "referenceUrl": "https://github.com/project-au-lait/svqk/tree/main/svqk-doc/src/docs/markdown/ja#svqk",
+          "referenceLabel": "リファレンス実装",
+          "description": {
+            "refimpl": "{{ referenceLabel }} を全て含んだ Archetypeです。",
+            "arch": "{{ referenceLabel }} の内、画面固有のものを除き、共通機能のものを含んだ Archetypeです。",
+            "skeleton": "{{ referenceLabel }} の内、共通機能・画面固有のものを全て除き、疎通確認用のもののみを含んだ Archetypeです。"
+          }
+        },
+        "summary": {
+          "archetype": "archetypeの種類",
+          "structure": "プロジェクトの構成"
+        },
+        "message": {
+          "setup": "セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。",
+          "openWs": "VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。",
+          "frontDemo": "Backend / Frontendサーバーの起動が、VS Codeから実行できます。",
+          "pwTest": "PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。"
+        }
       }
     },
 
