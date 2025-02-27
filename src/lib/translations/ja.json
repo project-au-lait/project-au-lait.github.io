@@ -26,6 +26,10 @@
             "skeleton": "{{ referenceLabel }} の内、共通機能・画面固有のものを全て除き、疎通確認用のもののみを含んだ Archetypeです。"
           }
         },
+        "summary": {
+          "archetype": "archetypeの種類",
+          "structure": "プロジェクトの構成"
+        },
         "message": {
           "setup": "セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。",
           "openWs": "VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。",

@@ -12,6 +12,8 @@
   import { Button } from 'flowbite-svelte';
   import BookOutline from 'flowbite-svelte-icons/BookOutline.svelte';
   import InfoCircleOutline from 'flowbite-svelte-icons/InfoCircleOutline.svelte';
+  import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
+
   import { onMount } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
@@ -115,15 +117,6 @@
         <li>
           <p class={qsStepClass}>
             {$t('msg.products.SVQK.usage.createPj')}
-            <Button
-              on:click={() => toggleAccordion(0)}
-              pill={true}
-              outline={true}
-              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
-              size="sm"
-            >
-              <InfoCircleOutline />
-            </Button>
           </p>
           <CodeCopy>
             <Highlight
@@ -137,6 +130,12 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
+          <div on:click={() => toggleAccordion(0)} class="accordion-header">
+            <div class="icon-wrapper" class:rotated={accordionStates[0]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.archetype')}
+          </div>
           {#if accordionStates[0]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.archetype.supplement')}
@@ -194,19 +193,16 @@
         <li>
           <p class={qsStepClass}>
             {$t('msg.products.SVQK.usage.openWs')}
-            <Button
-              on:click={() => toggleAccordion(1)}
-              pill={true}
-              outline={true}
-              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
-              size="sm"
-            >
-              <InfoCircleOutline />
-            </Button>
           </p>
           <CodeCopy>
             <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
+          <div on:click={() => toggleAccordion(1)} class="accordion-header">
+            <div class="icon-wrapper" class:rotated={accordionStates[1]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.structure')}
+          </div>
           {#if accordionStates[1]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
@@ -270,15 +266,6 @@
         <li>
           <p class={qsStepClass}>
             {$t('msg.products.SVQK.usage.createPj')}
-            <Button
-              on:click={() => toggleAccordion(2)}
-              pill={true}
-              outline={true}
-              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
-              size="sm"
-            >
-              <InfoCircleOutline />
-            </Button>
           </p>
           <CodeCopy>
             <Highlight
@@ -292,6 +279,12 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
+          <div on:click={() => toggleAccordion(2)} class="accordion-header">
+            <div class="icon-wrapper" class:rotated={accordionStates[2]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.archetype')}
+          </div>
           {#if accordionStates[2]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.archetype.supplement')}
@@ -350,19 +343,16 @@
         <li>
           <p class={qsStepClass}>
             {$t('msg.products.SVQK.usage.openWs')}
-            <Button
-              on:click={() => toggleAccordion(3)}
-              pill={true}
-              outline={true}
-              class="p-1 border-none hover:text-gray-300 focus-within:ring-0"
-              size="sm"
-            >
-              <InfoCircleOutline />
-            </Button>
           </p>
           <CodeCopy>
             <Highlight language={bash} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
+          <div on:click={() => toggleAccordion(3)} class="accordion-header">
+            <div class="icon-wrapper" class:rotated={accordionStates[3]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.structure')}
+          </div>
           {#if accordionStates[3]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
@@ -447,5 +437,21 @@
 <style>
   .section {
     scroll-margin-top: 6rem; /* ヘッダーの高さ + 余裕 */
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .icon-wrapper {
+    transition: transform 0.3s ease;
+  }
+
+  .rotated {
+    transform: rotate(90deg);
   }
 </style>
