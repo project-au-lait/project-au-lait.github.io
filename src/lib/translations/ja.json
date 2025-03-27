@@ -26,8 +26,36 @@
             "skeleton": "{{ referenceLabel }} の内、共通機能・画面固有のものを全て除き、疎通確認用のもののみを含んだ Archetypeです。"
           }
         },
+        "setupCommand": {
+          "description": "セットアップコマンドでは次の処理を実行します。",
+          "dbmsSetup": {
+            "title": "DBMS Setup",
+            "description": "DockerでPostgreSQLのコンテナを起動します。"
+          },
+          "dbMigration": {
+            "title": "DB Migration",
+            "description": "FlywayでDBにテーブルを作成します。"
+          },
+          "frontendBuild": {
+            "title": "Frontend Build",
+            "description": "Frontendアプリ(Svelte)をビルドします。"
+          },
+          "backendBuild": {
+            "title": "Backend Build",
+            "description": "Backendアプリ(Quarkus)をビルドします。この時、Frontendアプリを同梱します。"
+          },
+          "integrationTest": {
+            "title": "Integration Test",
+            "description": "Backendアプリを起動し、Rest ClientでWeb APIをテストします。"
+          },
+          "e2eTest": {
+            "title": "End To End Test",
+            "description": "Backendアプリ(Frontendアプリを同梱)を起動し、PlaywrightでEnd to End(Frontend + Backend + DB)のテストをします。"
+          }
+        },
         "summary": {
           "archetype": "archetypeの種類",
+          "setupCommand": "セットアップコマンドの処理内容",
           "structure": "プロジェクトの構成"
         },
         "message": {
