@@ -58,7 +58,7 @@
     }
   });
 
-  let accordionStates = [false, false, false, false];
+  let accordionStates = [false, false, false, false, false, false];
   const toggleAccordion = (index: number) => {
     accordionStates[index] = !accordionStates[index];
   };
@@ -193,6 +193,61 @@
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
           <CodeCopy><Highlight language={dos} code={'cd my-artifactid'} /></CodeCopy>
           <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
+          <div on:click={() => toggleAccordion(1)} class="accordion-header">
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[1]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.setupCommand')}
+          </div>
+          {#if accordionStates[1]}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.setupCommand.description')}
+              <ul class="list-decimal ml-8 my-3">
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.backendBuild.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.backendBuild.description')}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.integrationTest.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.integrationTest.description')}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.e2eTest.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.e2eTest.description')}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          {/if}
         </li>
 
         <li>
@@ -202,13 +257,13 @@
           <CodeCopy>
             <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
-          <div on:click={() => toggleAccordion(1)} class="accordion-header">
-            <div class="accordion-icon-wrapper" class:rotated={accordionStates[1]}>
+          <div on:click={() => toggleAccordion(2)} class="accordion-header">
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[2]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.structure')}
           </div>
-          {#if accordionStates[1]}
+          {#if accordionStates[2]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
               <Highlight
@@ -284,13 +339,13 @@
   -Dversion=1.0-SNAPSHOT`}
             />
           </CodeCopy>
-          <div on:click={() => toggleAccordion(2)} class="accordion-header">
-            <div class="accordion-icon-wrapper" class:rotated={accordionStates[2]}>
+          <div on:click={() => toggleAccordion(3)} class="accordion-header">
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[3]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.archetype')}
           </div>
-          {#if accordionStates[2]}
+          {#if accordionStates[3]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.archetype.supplement')}
               <ul class="list-disc ml-8 my-3">
@@ -343,6 +398,61 @@
           <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
           <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
           <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
+          <div on:click={() => toggleAccordion(4)} class="accordion-header">
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[4]}>
+              <AngleRightOutline class="xs icon" size="sm" />
+            </div>
+            {$t('msg.products.SVQK.usage.summary.setupCommand')}
+          </div>
+          {#if accordionStates[4]}
+            <div transition:slide class="pt-2">
+              {$t('msg.products.SVQK.usage.setupCommand.description')}
+              <ul class="list-decimal ml-8 my-3">
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.title')}</b>
+                  <ul>
+                    <li>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.description')}</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.backendBuild.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.backendBuild.description')}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.integrationTest.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.integrationTest.description')}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>{$t('msg.products.SVQK.usage.setupCommand.e2eTest.title')}</b>
+                  <ul>
+                    <li>
+                      {$t('msg.products.SVQK.usage.setupCommand.e2eTest.description')}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          {/if}
         </li>
 
         <li>
@@ -352,13 +462,13 @@
           <CodeCopy>
             <Highlight language={bash} code={'code my-artifactid.code-workspace'} />
           </CodeCopy>
-          <div on:click={() => toggleAccordion(3)} class="accordion-header">
-            <div class="accordion-icon-wrapper" class:rotated={accordionStates[3]}>
+          <div on:click={() => toggleAccordion(5)} class="accordion-header">
+            <div class="accordion-icon-wrapper" class:rotated={accordionStates[5]}>
               <AngleRightOutline class="xs icon" size="sm" />
             </div>
             {$t('msg.products.SVQK.usage.summary.structure')}
           </div>
-          {#if accordionStates[3]}
+          {#if accordionStates[5]}
             <div transition:slide class="pt-2">
               {$t('msg.products.SVQK.usage.structure')}
               <Highlight

@@ -25,8 +25,36 @@
             "skeleton": "This Archetype contains only those {{ referenceLabel }} that are used for communication checks, excluding all common functions and screen-specific items."
           }
         },
+        "setupCommand": {
+          "description": "The setup command performs the following operations.",
+          "dbmsSetup": {
+            "title": "DBMS Setup",
+            "description": "Start a PostgreSQL container with Docker."
+          },
+          "dbMigration": {
+            "title": "DB Migration",
+            "description": "Create tables in DB with Flyway."
+          },
+          "frontendBuild": {
+            "title": "Frontend Build",
+            "description": "Build the Frontend application (Svelte)."
+          },
+          "backendBuild": {
+            "title": "Backend Build",
+            "description": "Build the Backend app (Quarkus). At this time, the Frontend app is included."
+          },
+          "integrationTest": {
+            "title": "Integration Test",
+            "description": "Start the Backend app and test the Web API with the Rest Client."
+          },
+          "e2eTest": {
+            "title": "End To End Test",
+            "description": "Start the Backend app (Frontend app included) and test End to End (Frontend + Backend + DB) with Playwright."
+          }
+        },
         "summary": {
           "archetype": "Types of archetype",
+          "setupCommand": "Setup command processing details",
           "structure": "Project Structure"
         },
         "message": {
