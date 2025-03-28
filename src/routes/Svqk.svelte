@@ -574,19 +574,19 @@
     align-items: center;
     cursor: pointer;
     padding: 8px 16px;
-    font-size: 1rem;
-    background-color: #ffffff;
+    font: inherit;
+    background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 4px;
     margin-bottom: 8px;
     transition:
-      background-color 0.3s ease,
-      box-shadow 0.3s ease;
+      background-color 0.3s,
+      box-shadow 0.3s;
   }
 
   .accordion-header:hover {
-    background-color: #f9fafb;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: #f9fafb;
+    box-shadow: 0 1px 2px #0001;
   }
 
   .accordion-icon-wrapper {
