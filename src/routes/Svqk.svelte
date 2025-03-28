@@ -570,11 +570,23 @@
   }
 
   .accordion-header {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
-    padding: 4px;
-    gap: 6px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background-color: #f9fafb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   }
 
   .accordion-icon-wrapper {
