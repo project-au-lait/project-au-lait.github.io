@@ -19,6 +19,8 @@
   });
 
   onDestroy(unsubscribe);
+
+  $: xLink = $locale === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait';
 </script>
 
 <nav class="bg-black sticky top-0 py-4 px-6 z-10">
@@ -46,6 +48,11 @@
       <li>
         <a href="https://github.com/project-au-lait">
           <img src="./github-mark-white.svg" alt="GitHub" class="h-8" />
+        </a>
+      </li>
+      <li>
+        <a href={xLink}>
+          <img src="./x-logo-white.png" alt="X" class="h-5" />
         </a>
       </li>
     </ul>
