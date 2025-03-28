@@ -24,37 +24,38 @@
 </script>
 
 <nav class="bg-black sticky top-0 py-4 px-6 z-10">
-  <div class="flex justify-between">
+  <div class="flex justify-between items-center">
     <a href="/">
       <div class="flex items-center">
         <img src="./logo.svg" alt="logo" class="h-10" />
         <p class="ml-2 text-xl text-white">Project Au Lait</p>
       </div>
     </a>
-    <ul class="flex space-x-3 items-center">
-      <li>
-        <Button
-          ><GlobeSolid size="lg" />
-          <ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button
-        >
+
+    <div class="flex items-center gap-4">
+      <div>
+        <Button>
+          <GlobeSolid size="lg" />
+          <ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+        </Button>
         <Dropdown bind:open={dropdownOpen}>
           {#each $locales as localeValue}
-            <DropdownItem on:click={() => chooseItem(localeValue)}
-              >{localeLabels[localeValue]}</DropdownItem
-            >
+            <DropdownItem on:click={() => chooseItem(localeValue)}>
+              {localeLabels[localeValue]}
+            </DropdownItem>
           {/each}
         </Dropdown>
-      </li>
-      <li>
+      </div>
+      <div>
         <a href="https://github.com/project-au-lait">
           <img src="./github-mark-white.svg" alt="GitHub" class="h-8" />
         </a>
-      </li>
-      <li>
+      </div>
+      <div>
         <a href={xLink} target="_blank" rel="noopener noreferrer">
           <img src="./x-logo-white.png" alt="X" class="h-5" />
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </nav>
