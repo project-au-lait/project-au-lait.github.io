@@ -51,7 +51,7 @@
         </a>
       </li>
       <li>
-        <a href={xLink}>
+        <a href={xLink} target="_blank" rel="noopener noreferrer">
           <img src="./x-logo-white.png" alt="X" class="h-5" />
         </a>
       </li>
