@@ -550,7 +550,7 @@
           <ul class="list-disc pl-4">
             <li>
               <p class={qsStepClass}>
-                <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
+                <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
                   class={kbdClass}>P</Kbd
                 > &gt; Tasks: Run task &gt; generate
               </p>
