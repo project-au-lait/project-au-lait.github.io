@@ -17,6 +17,7 @@
   import { onMount } from 'svelte';
 
   const qsStepClass = 'mt-4 mb-2';
+  const kbdClass = 'px-2 py-1.5';
 
   const images = [
     {
@@ -269,7 +270,7 @@
               <Highlight
                 language={dos}
                 code={`📁 my-artifactid 
-├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
+├── 📁 my-artifactid-backend  <--- Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
 │   ├── 📄 compose.yml
@@ -277,7 +278,7 @@
 ├── 📁 my-artifactid-e2etest  <--- Playwright (pnpm)
 │   ├── 📄 package.json
 │   └── 📄 pom.xml
-├── 📁 my-artifactid-frontend  <----- SvelteKit (pnpm)
+├── 📁 my-artifactid-frontend  <-- SvelteKit (pnpm)
 │   ├── 📄 package.json
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-migration  <- Flyway (Maven)
@@ -293,15 +294,15 @@
           <ul class="list-disc pl-4">
             <li>
               <p class={qsStepClass}>
-                <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
-                  class="px-2 py-1.5">P</Kbd
+                <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
                 > &gt; Tasks: Run task &gt; start-back
               </p>
             </li>
             <li>
               <p class={qsStepClass}>
-                <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd
-                  class="px-2 py-1.5">P</Kbd
+                <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
                 > &gt; Tasks: Run task &gt; start-front
               </p>
             </li>
@@ -311,11 +312,35 @@
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.access')}</p>
           <p class={qsStepClass}>
-            <a
-              href="http://localhost:5173"
-              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >http://localhost:5173</a
-            >
+            {@html createReferenceLink('http://localhost:5173', 'http://localhost:5173')}
+          </p>
+        </li>
+
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.tryGenerator')}</p>
+          <ul class="list-disc pl-4">
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
+                > &gt; Tasks: Run task &gt; generate
+              </p>
+            </li>
+            <li><p class="mt-2 mb-2">Select a component -&gt; all</p></li>
+            <li><p class="mt-2 mb-2">Enter tables -&gt; World</p></li>
+          </ul>
+          <p class="mt-4 mb-2">
+            {@html $t('msg.products.SVQK.usage.taskFinished', {
+              link: createReferenceLink(
+                'http://localhost:5173/worlds',
+                'http://localhost:5173/worlds'
+              ),
+            })}
+          </p>
+          <p class="mt-2 mb-2">
+            {@html $t('msg.products.SVQK.usage.generatorDetails', {
+              link: createReferenceLink($t('msg.products.SVQK.readmeLink'), 'README'),
+            })}
           </p>
         </li>
       </ol>
@@ -474,7 +499,7 @@
               <Highlight
                 language={dos}
                 code={`📁 my-artifactid 
-├── 📁 my-artifactid-backend  <------ Quarkus (Maven)
+├── 📁 my-artifactid-backend  <--- Quarkus (Maven)
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-container  <- Docker
 │   ├── 📄 compose.yml
@@ -482,7 +507,7 @@
 ├── 📁 my-artifactid-e2etest  <--- Playwright (pnpm)
 │   ├── 📄 package.json
 │   └── 📄 pom.xml
-├── 📁 my-artifactid-frontend  <----- SvelteKit (pnpm)
+├── 📁 my-artifactid-frontend  <-- SvelteKit (pnpm)
 │   ├── 📄 package.json
 │   └── 📄 pom.xml
 ├── 📁 my-artifactid-migration  <- Flyway (Maven)
@@ -498,15 +523,15 @@
           <ul class="list-disc pl-4">
             <li>
               <p class={qsStepClass}>
-                <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
-                  class="px-2 py-1.5">P</Kbd
+                <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
                 > &gt; Tasks: Run task &gt; start-back
               </p>
             </li>
             <li>
               <p class={qsStepClass}>
-                <Kbd class="px-2 py-1.5">⌘ Command</Kbd> + <Kbd class="px-2 py-1.5">⇧ Shift</Kbd> + <Kbd
-                  class="px-2 py-1.5">P</Kbd
+                <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
                 > &gt; Tasks: Run task &gt; start-front
               </p>
             </li>
@@ -516,11 +541,35 @@
         <li>
           <p class={qsStepClass}>{$t('msg.products.SVQK.usage.access')}</p>
           <p class={qsStepClass}>
-            <a
-              href="http://localhost:5173"
-              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >http://localhost:5173</a
-            >
+            {@html createReferenceLink('http://localhost:5173', 'http://localhost:5173')}
+          </p>
+        </li>
+
+        <li>
+          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.tryGenerator')}</p>
+          <ul class="list-disc pl-4">
+            <li>
+              <p class={qsStepClass}>
+                <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
+                  class={kbdClass}>P</Kbd
+                > &gt; Tasks: Run task &gt; generate
+              </p>
+            </li>
+            <li><p class="mt-2 mb-2">Select a component -&gt; all</p></li>
+            <li><p class="mt-2 mb-2">Enter tables -&gt; World</p></li>
+          </ul>
+          <p class="mt-4 mb-2">
+            {@html $t('msg.products.SVQK.usage.taskFinished', {
+              link: createReferenceLink(
+                'http://localhost:5173/worlds',
+                'http://localhost:5173/worlds'
+              ),
+            })}
+          </p>
+          <p class="mt-2 mb-2">
+            {@html $t('msg.products.SVQK.usage.generatorDetails', {
+              link: createReferenceLink($t('msg.products.SVQK.readmeLink'), 'README'),
+            })}
           </p>
         </li>
       </ol>
