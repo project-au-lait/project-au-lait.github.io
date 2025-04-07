@@ -327,7 +327,7 @@
               </p>
             </li>
             <li><p class="mt-2 mb-2">Select a component -&gt; all</p></li>
-            <li><p class="mt-2 mb-2">Enter tables -&gt; World</p></li>
+            <li><p class="mt-2 mb-2">Enter tables -&gt; world</p></li>
           </ul>
           <p class="mt-4 mb-2">
             {@html $t('msg.products.SVQK.usage.taskFinished', {
@@ -556,7 +556,7 @@
               </p>
             </li>
             <li><p class="mt-2 mb-2">Select a component -&gt; all</p></li>
-            <li><p class="mt-2 mb-2">Enter tables -&gt; World</p></li>
+            <li><p class="mt-2 mb-2">Enter tables -&gt; world</p></li>
           </ul>
           <p class="mt-4 mb-2">
             {@html $t('msg.products.SVQK.usage.taskFinished', {
