@@ -296,14 +296,14 @@
               <p class={qsStepClass}>
                 <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
                   class={kbdClass}>P</Kbd
-                > &gt; Tasks: Run task &gt; start-back
+                > &gt; Tasks: Run task &gt; start-backend
               </p>
             </li>
             <li>
               <p class={qsStepClass}>
                 <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
                   class={kbdClass}>P</Kbd
-                > &gt; Tasks: Run task &gt; start-front
+                > &gt; Tasks: Run task &gt; start-frontend
               </p>
             </li>
           </ul>
@@ -525,14 +525,14 @@
               <p class={qsStepClass}>
                 <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
                   class={kbdClass}>P</Kbd
-                > &gt; Tasks: Run task &gt; start-back
+                > &gt; Tasks: Run task &gt; start-backend
               </p>
             </li>
             <li>
               <p class={qsStepClass}>
                 <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
                   class={kbdClass}>P</Kbd
-                > &gt; Tasks: Run task &gt; start-front
+                > &gt; Tasks: Run task &gt; start-frontend
               </p>
             </li>
           </ul>
