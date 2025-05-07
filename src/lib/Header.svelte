@@ -3,7 +3,7 @@
   import { onDestroy } from 'svelte';
   import Cookies from 'js-cookie';
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import ChevronDownOutline from 'flowbite-svelte-icons/ChevronDownOutline.svelte';
+  import { ChevronDownOutline, FilePenOutline } from 'flowbite-svelte-icons';
   import GlobeSolid from 'flowbite-svelte-icons/GlobeSolid.svelte';
 
   const localeLabels: { [key: string]: string } = { en: 'English', ja: '日本語' };
@@ -21,6 +21,8 @@
   onDestroy(unsubscribe);
 
   $: xLink = $locale === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait';
+  $: blogLink =
+    $locale === 'ja' ? 'https://zenn.dev/prj_au_lait_jp' : 'https://dev.to/project_au_lait';
 </script>
 
 <nav class="bg-black sticky top-0 py-4 px-6 z-10">
@@ -59,6 +61,12 @@
         <div class="w-12 flex justify-center">
           <a href={xLink} target="_blank" rel="noopener noreferrer">
             <img src="./x-logo-white.png" alt="X" class="h-5" />
+          </a>
+        </div>
+
+        <div class="w-12 flex justify-center">
+          <a href={blogLink} target="_blank">
+            <FilePenOutline class="w-6 h-6 ms-1 text-white dark:text-white" />
           </a>
         </div>
       </div>
