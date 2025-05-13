@@ -7,6 +7,7 @@
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
 
   const qsStepClass = 'mt-4 mb-2';
+  const runTaskComandStyle = 'display: flex; align-items: center;';
   let version = 'CHECK_THE_LATEST_ON_GITHUB';
 
   let accordionStates = [false, false, false, false, false, false];
@@ -184,12 +185,12 @@
     <p class={qsStepClass}>{$t('msg.products.SVQK.usage.runTask')}</p>
     <ul class="list-disc pl-4">
       <li>
-        <p class={qsStepClass}>
+        <p class={qsStepClass} style={runTaskComandStyle}>
           <slot name="runTaskComand"></slot>&gt; Tasks: Run task &gt; start-backend
         </p>
       </li>
       <li>
-        <p class={qsStepClass}>
+        <p class={qsStepClass} style={runTaskComandStyle}>
           <slot name="runTaskComand"></slot>
           &gt; Tasks: Run task &gt; start-frontend
         </p>
@@ -208,7 +209,7 @@
     <p class={qsStepClass}>{$t('msg.products.SVQK.usage.tryGenerator')}</p>
     <ul class="list-disc pl-4">
       <li>
-        <p class={qsStepClass}>
+        <p class={qsStepClass} style={runTaskComandStyle}>
           <slot name="runTaskComand"></slot>
           &gt; Tasks: Run task &gt; generate
         </p>
