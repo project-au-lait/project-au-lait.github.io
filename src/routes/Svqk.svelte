@@ -59,12 +59,6 @@
   });
 
   let accordionStates = [false, false, false, false, false, false];
-  const toggleAccordion = (index: number) => {
-    accordionStates[index] = !accordionStates[index];
-  };
-  const createReferenceLink = (href: string, label: string) => {
-    return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">${label}</a>`;
-  };
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
@@ -216,25 +210,5 @@
 
   .section-title:hover .section-link-icon {
     opacity: 1;
-  }
-
-  .accordion-header {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 8px 16px;
-    font: inherit;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    transition:
-      background-color 0.3s,
-      box-shadow 0.3s;
-  }
-
-  .accordion-header:hover {
-    background: #f9fafb;
-    box-shadow: 0 1px 2px #0001;
   }
 </style>

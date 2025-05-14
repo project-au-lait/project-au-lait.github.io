@@ -8,7 +8,6 @@
 
   const qsStepClass = 'mt-4 mb-2';
   const runTaskComandStyle = 'display: flex; align-items: center;';
-  let version = 'CHECK_THE_LATEST_ON_GITHUB';
 
   let accordionStates = [false, false, false, false, false, false];
   const toggleAccordion = (index: number) => {
@@ -17,6 +16,30 @@
   const createReferenceLink = (href: string, label: string) => {
     return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">${label}</a>`;
   };
+  const refimplLabel = $t('msg.products.SVQK.usage.archetype.description.refimpl', {
+    referenceLabel: createReferenceLink(
+      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+    ),
+  } as any);
+  const archLavel = $t('msg.products.SVQK.usage.archetype.description.arch', {
+    referenceLabel: createReferenceLink(
+      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+    ),
+  } as any);
+  const skeletonLabel = $t('msg.products.SVQK.usage.archetype.description.skeleton', {
+    referenceLabel: createReferenceLink(
+      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
+      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+    ),
+  } as any);
+  const taskFinishedLink = $t('msg.products.SVQK.usage.taskFinished', {
+    link: createReferenceLink('http://localhost:5173/worlds', 'http://localhost:5173/worlds'),
+  } as any);
+  const generatorDetailsLink = $t('msg.products.SVQK.usage.generatorDetails', {
+    link: createReferenceLink($t('msg.products.SVQK.readmeLink'), 'README'),
+  } as any);
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
@@ -41,12 +64,7 @@
             <b>svqk-archetype-refimpl</b>
             <ul class="list-disc ml-4">
               <li>
-                {@html $t('msg.products.SVQK.usage.archetype.description.refimpl', {
-                  referenceLabel: createReferenceLink(
-                    $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-                    $t('msg.products.SVQK.usage.archetype.referenceLabel')
-                  ),
-                })}
+                {@html refimplLabel}
               </li>
             </ul>
           </li>
@@ -54,12 +72,7 @@
             <b>svqk-archetype-arch</b>
             <ul class="list-disc ml-4">
               <li>
-                {@html $t('msg.products.SVQK.usage.archetype.description.arch', {
-                  referenceLabel: createReferenceLink(
-                    $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-                    $t('msg.products.SVQK.usage.archetype.referenceLabel')
-                  ),
-                })}
+                {@html archLavel}
               </li>
             </ul>
           </li>
@@ -67,12 +80,7 @@
             <b>svqk-archetype-skeleton</b>
             <ul class="list-disc ml-4">
               <li>
-                {@html $t('msg.products.SVQK.usage.archetype.description.skeleton', {
-                  referenceLabel: createReferenceLink(
-                    $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-                    $t('msg.products.SVQK.usage.archetype.referenceLabel')
-                  ),
-                })}
+                {@html skeletonLabel}
               </li>
             </ul>
           </li>
@@ -218,14 +226,10 @@
       <li><p class="mt-2 mb-2">Enter tables -&gt; world</p></li>
     </ul>
     <p class="mt-4 mb-2">
-      {@html $t('msg.products.SVQK.usage.taskFinished', {
-        link: createReferenceLink('http://localhost:5173/worlds', 'http://localhost:5173/worlds'),
-      })}
+      {@html taskFinishedLink}
     </p>
     <p class="mt-2 mb-2">
-      {@html $t('msg.products.SVQK.usage.generatorDetails', {
-        link: createReferenceLink($t('msg.products.SVQK.readmeLink'), 'README'),
-      })}
+      {@html generatorDetailsLink}
     </p>
   </li>
 </ol>
