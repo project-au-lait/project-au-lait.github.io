@@ -57,8 +57,6 @@
       embla = EmblaCarousel(emblaNode, { loop: true });
     }
   });
-
-  let accordionStates = [false, false, false, false, false, false];
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
