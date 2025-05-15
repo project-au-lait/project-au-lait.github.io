@@ -9,7 +9,7 @@
       "usage": {
         "requiredSoftware": "To develop applications using SVQK, you need the following software.",
         "description": "To start developing with SVQK, create a project using Maven Archetype, which SVQK provides. To create a project from Archetype, run the following command.",
-        "setUtf-8": "Set the console character code to UTF-8.",
+        "setUtf_8": "Set the console character code to UTF-8.",
         "createPj": "Create a SVQK project.",
         "setup": "Move to the directory of the created project and execute the setup command.",
         "openWs": "Open the created project as a VSCode workspace.",

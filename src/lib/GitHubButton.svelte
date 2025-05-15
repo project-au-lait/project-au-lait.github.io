@@ -2,7 +2,11 @@
   import GithubSolid from 'flowbite-svelte-icons/GithubSolid.svelte';
   import { Button } from 'flowbite-svelte';
 
-  export let repo: string;
+  interface Props {
+    repo: string;
+  }
+
+  let { repo }: Props = $props();
 </script>
 
 <Button size="sm" color="dark" href={repo} target="_blank">

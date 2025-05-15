@@ -5,11 +5,26 @@
   import { dos } from 'svelte-highlight/languages';
   import { slide } from 'svelte/transition';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
+  interface Props {
+    setUtf_8?: import('svelte').Snippet;
+    createPjCommand?: import('svelte').Snippet;
+    setupCommand?: import('svelte').Snippet;
+    setup?: import('svelte').Snippet;
+    runTaskComand?: import('svelte').Snippet;
+  }
+
+  let {
+    setUtf_8,
+    createPjCommand,
+    setupCommand,
+    setup,
+    runTaskComand
+  }: Props = $props();
 
   const qsStepClass = 'mt-4 mb-2';
   const runTaskComandStyle = 'display: flex; align-items: center;';
 
-  let accordionStates = [false, false, false, false, false, false];
+  let accordionStates = $state([false, false, false, false, false, false]);
   const toggleAccordion = (index: number) => {
     accordionStates[index] = !accordionStates[index];
   };
@@ -43,14 +58,14 @@
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
-  <slot name="setUtf-8"></slot>
+  {@render setUtf_8?.()}
 
   <li>
     <p class={qsStepClass}>
       {$t('msg.products.SVQK.usage.createPj')}
     </p>
-    <slot name="createPjCommand"></slot>
-    <button on:click={() => toggleAccordion(0)} class="accordion-header">
+    {@render createPjCommand?.()}
+    <button onclick={() => toggleAccordion(0)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[0]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
@@ -91,8 +106,8 @@
 
   <li>
     <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
-    <slot name="setupCommand"></slot>
-    <button on:click={() => toggleAccordion(4)} class="accordion-header">
+    {@render setupCommand?.()}
+    <button onclick={() => toggleAccordion(4)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[4]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
@@ -149,7 +164,7 @@
     {/if}
   </li>
 
-  <slot name="setup"></slot>
+  {@render setup?.()}
 
   <li>
     <p class={qsStepClass}>
@@ -158,7 +173,7 @@
     <CodeCopy>
       <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
     </CodeCopy>
-    <button on:click={() => toggleAccordion(2)} class="accordion-header">
+    <button onclick={() => toggleAccordion(2)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[2]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
@@ -194,12 +209,12 @@
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          <slot name="runTaskComand"></slot>&gt; Tasks: Run task &gt; start-backend
+          {@render runTaskComand?.()}&gt; Tasks: Run task &gt; start-backend
         </p>
       </li>
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          <slot name="runTaskComand"></slot>
+          {@render runTaskComand?.()}
           &gt; Tasks: Run task &gt; start-frontend
         </p>
       </li>
@@ -218,7 +233,7 @@
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          <slot name="runTaskComand"></slot>
+          {@render runTaskComand?.()}
           &gt; Tasks: Run task &gt; generate
         </p>
       </li>
