@@ -129,19 +129,15 @@
           </div>
         {/snippet}
         {#snippet setupCommand()}
-          <div>
-            <CodeCopy><Highlight language={dos} code={'cd my-artifactid'} /></CodeCopy>
-            <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
-          </div>
+          <CodeCopy><Highlight language={dos} code={'cd my-artifactid'} /></CodeCopy>
+          <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
         {/snippet}
         {#snippet runTaskComand()}
-          <div>
-            <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
-              class={kbdClass}
-            >
-              P
-            </Kbd>
-          </div>
+          <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
+            class={kbdClass}
+          >
+            P
+          </Kbd>
         {/snippet}
       </SvqkCommonContents>
     </TabItem>
