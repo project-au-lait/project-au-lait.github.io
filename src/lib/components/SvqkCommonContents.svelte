@@ -5,21 +5,15 @@
   import { dos } from 'svelte-highlight/languages';
   import { slide } from 'svelte/transition';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
+  import type { Snippet } from 'svelte';
   interface Props {
-    setUtf_8?: import('svelte').Snippet;
-    createPjCommand?: import('svelte').Snippet;
-    setupCommand?: import('svelte').Snippet;
-    setup?: import('svelte').Snippet;
-    runTaskComand?: import('svelte').Snippet;
+    setUtf_8?: Snippet;
+    createPjCommand: Snippet;
+    setupCommand: Snippet;
+    runTaskComand: Snippet;
   }
 
-  let {
-    setUtf_8,
-    createPjCommand,
-    setupCommand,
-    setup,
-    runTaskComand
-  }: Props = $props();
+  let { setUtf_8, createPjCommand, setupCommand, runTaskComand }: Props = $props();
 
   const qsStepClass = 'mt-4 mb-2';
   const runTaskComandStyle = 'display: flex; align-items: center;';
@@ -58,13 +52,15 @@
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
-  {@render setUtf_8?.()}
+  {#if setUtf_8}
+    {@render setUtf_8()}
+  {/if}
 
   <li>
     <p class={qsStepClass}>
       {$t('msg.products.SVQK.usage.createPj')}
     </p>
-    {@render createPjCommand?.()}
+    {@render createPjCommand()}
     <button onclick={() => toggleAccordion(0)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[0]}>
         <AngleRightOutline class="xs icon" size="sm" />
@@ -106,7 +102,7 @@
 
   <li>
     <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
-    {@render setupCommand?.()}
+    {@render setupCommand()}
     <button onclick={() => toggleAccordion(4)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[4]}>
         <AngleRightOutline class="xs icon" size="sm" />
@@ -164,8 +160,6 @@
     {/if}
   </li>
 
-  {@render setup?.()}
-
   <li>
     <p class={qsStepClass}>
       {$t('msg.products.SVQK.usage.openWs')}
@@ -209,12 +203,12 @@
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          {@render runTaskComand?.()}&gt; Tasks: Run task &gt; start-backend
+          {@render runTaskComand()}&gt; Tasks: Run task &gt; start-backend
         </p>
       </li>
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          {@render runTaskComand?.()}
+          {@render runTaskComand()}
           &gt; Tasks: Run task &gt; start-frontend
         </p>
       </li>
@@ -233,7 +227,7 @@
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
-          {@render runTaskComand?.()}
+          {@render runTaskComand()}
           &gt; Tasks: Run task &gt; generate
         </p>
       </li>
