@@ -41,9 +41,9 @@
     },
   ];
 
-  let version = 'CHECK_THE_LATEST_ON_GITHUB';
-  let emblaNode: HTMLElement;
-  let embla: EmblaCarouselType;
+  let version = $state('CHECK_THE_LATEST_ON_GITHUB');
+  let emblaNode: HTMLElement | undefined = $state();
+  let embla: EmblaCarouselType | undefined = $state();
 
   onMount(async () => {
     const res = await fetch('https://api.github.com/repos/project-au-lait/svqk/releases/latest');
@@ -106,64 +106,75 @@
   <Tabs>
     <TabItem open title="Windows (cmd)">
       <SvqkCommonContents>
-        <li slot="setUtf-8">
-          <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf-8')}</p>
-          <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
-        </li>
-        <div slot="createPjCommand">
-          <CodeCopy>
-            <Highlight
-              language={dos}
-              code={`mvn archetype:generate ^
-        -DarchetypeGroupId=dev.aulait.svqk ^
-        -DarchetypeArtifactId=svqk-archetype-refimpl ^
-        -DarchetypeVersion=${version} ^
-        -DgroupId=my.group.id ^
-        -DartifactId=my-artifactid ^
-        -Dversion=1.0-SNAPSHOT`}
-            />
-          </CodeCopy>
-        </div>
-        <div slot="setupCommand">
+        {#snippet setUtf_8()}
+          <li>
+            <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf_8')}</p>
+            <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
+          </li>
+        {/snippet}
+        {#snippet createPjCommand()}
+          <div>
+            <CodeCopy>
+              <Highlight
+                language={dos}
+                code={`mvn archetype:generate ^
+          -DarchetypeGroupId=dev.aulait.svqk ^
+          -DarchetypeArtifactId=svqk-archetype-refimpl ^
+          -DarchetypeVersion=${version} ^
+          -DgroupId=my.group.id ^
+          -DartifactId=my-artifactid ^
+          -Dversion=1.0-SNAPSHOT`}
+              />
+            </CodeCopy>
+          </div>
+        {/snippet}
+        {#snippet setupCommand()}
           <CodeCopy><Highlight language={dos} code={'cd my-artifactid'} /></CodeCopy>
           <CodeCopy><Highlight language={dos} code={'mvnw install -T 1C -P setup'} /></CodeCopy>
-        </div>
-        <div slot="runTaskComand">
+        {/snippet}
+        {#snippet runTaskComand()}
           <Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}>Shift</Kbd> + <Kbd
             class={kbdClass}
           >
             P
           </Kbd>
-        </div>
+        {/snippet}
       </SvqkCommonContents>
     </TabItem>
 
     <TabItem title="Mac">
       <SvqkCommonContents>
-        <div slot="createPjCommand">
-          <CodeCopy>
-            <Highlight
-              language={bash}
-              code={`mvn archetype:generate \\
-  -DarchetypeGroupId=dev.aulait.svqk \\
-  -DarchetypeArtifactId=svqk-archetype-refimpl \\
-  -DarchetypeVersion=${version} \\
-  -DgroupId=my.group.id  \\
-  -DartifactId=my-artifactid \\
-  -Dversion=1.0-SNAPSHOT`}
-            />
-          </CodeCopy>
-        </div>
-        <div slot="setupCommand">
-          <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
-          <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
-          <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy>
-        </div>
-        <div slot="runTaskComand">
-          <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
-            class={kbdClass}>P</Kbd
-          >
-        </div>
+        {#snippet createPjCommand()}
+          <div>
+            <CodeCopy>
+              <Highlight
+                language={bash}
+                code={`mvn archetype:generate \\
+    -DarchetypeGroupId=dev.aulait.svqk \\
+    -DarchetypeArtifactId=svqk-archetype-refimpl \\
+    -DarchetypeVersion=${version} \\
+    -DgroupId=my.group.id  \\
+    -DartifactId=my-artifactid \\
+    -Dversion=1.0-SNAPSHOT`}
+              />
+            </CodeCopy>
+          </div>
+        {/snippet}
+        {#snippet setupCommand()}
+          <div>
+            <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
+            <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
+            <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy
+            >
+          </div>
+        {/snippet}
+        {#snippet runTaskComand()}
+          <div>
+            <Kbd class={kbdClass}>⌘ Command</Kbd> + <Kbd class={kbdClass}>⇧ Shift</Kbd> + <Kbd
+              class={kbdClass}>P</Kbd
+            >
+          </div>
+        {/snippet}
       </SvqkCommonContents>
     </TabItem>
   </Tabs>
@@ -181,10 +192,10 @@
   </div>
 
   <div class="flex justify-center my-4">
-    <button on:click={() => embla?.scrollPrev()} class="px-4 py-2 rounded-lg mr-2">
+    <button onclick={() => embla?.scrollPrev()} class="px-4 py-2 rounded-lg mr-2">
       <img src="./arrow-back.svg" alt="back" />
     </button>
-    <button on:click={() => embla?.scrollNext()} class="px-4 py-2 rounded-lg mr-2">
+    <button onclick={() => embla?.scrollNext()} class="px-4 py-2 rounded-lg mr-2">
       <img src="./arrow-foward.svg" alt="forward" />
     </button>
   </div>

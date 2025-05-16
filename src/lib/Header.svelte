@@ -7,7 +7,7 @@
   import GlobeSolid from 'flowbite-svelte-icons/GlobeSolid.svelte';
 
   const localeLabels: { [key: string]: string } = { en: 'English', ja: '日本語' };
-  let dropdownOpen = false;
+  let dropdownOpen = $state(false);
 
   function chooseItem(locVal: string) {
     dropdownOpen = false;
@@ -20,9 +20,9 @@
 
   onDestroy(unsubscribe);
 
-  $: xLink = $locale === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait';
-  $: blogLink =
-    $locale === 'ja' ? 'https://zenn.dev/prj_au_lait_jp' : 'https://dev.to/project_au_lait';
+  let xLink = $derived($locale === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait');
+  let blogLink =
+    $derived($locale === 'ja' ? 'https://zenn.dev/prj_au_lait_jp' : 'https://dev.to/project_au_lait');
 </script>
 
 <nav class="bg-black sticky top-0 py-4 px-6 z-10">

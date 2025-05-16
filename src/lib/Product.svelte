@@ -1,13 +1,9 @@
 <script lang="ts">
   import GitHubButton from './GitHubButton.svelte';
 
-  export let name;
-  export let description;
-  export let umlPath;
-  export let usage;
-  export let repo;
+  let { name, description, umlPath, usage, repo } = $props();
 
-  let mounted: boolean;
+  let mounted: boolean | undefined = $state();
   setTimeout(() => (mounted = typeof window !== 'undefined'));
 </script>
 
