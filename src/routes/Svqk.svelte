@@ -144,7 +144,6 @@
 
     <TabItem title="Mac">
       <SvqkCommonContents>
-        {#snippet setUtf_8()}{/snippet}
         {#snippet createPjCommand()}
           <div>
             <CodeCopy>

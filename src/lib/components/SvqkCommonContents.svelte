@@ -7,7 +7,7 @@
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
   import type { Snippet } from 'svelte';
   interface Props {
-    setUtf_8: Snippet;
+    setUtf_8?: Snippet;
     createPjCommand: Snippet;
     setupCommand: Snippet;
     runTaskComand: Snippet;
@@ -52,7 +52,9 @@
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
-  {@render setUtf_8()}
+  {#if setUtf_8}
+    {@render setUtf_8()}
+  {/if}
 
   <li>
     <p class={qsStepClass}>
