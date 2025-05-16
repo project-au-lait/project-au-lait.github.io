@@ -52,9 +52,7 @@
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
-  {#if setUtf_8}
-    {@render setUtf_8()}
-  {/if}
+  {@render setUtf_8?.()}
 
   <li>
     <p class={qsStepClass}>
