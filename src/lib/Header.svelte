@@ -1,28 +1,23 @@
 <script lang="ts">
-  import { locale, locales } from '$lib/translations';
-  import { onDestroy } from 'svelte';
-  import Cookies from 'js-cookie';
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownOutline, FilePenOutline } from 'flowbite-svelte-icons';
   import GlobeSolid from 'flowbite-svelte-icons/GlobeSolid.svelte';
+  import { getLocale, locales, setLocale, type Locale } from './paraglide/runtime';
 
   const localeLabels: { [key: string]: string } = { en: 'English', ja: '日本語' };
   let dropdownOpen = $state(false);
 
-  function chooseItem(locVal: string) {
+  function chooseItem(locVal: Locale) {
     dropdownOpen = false;
-    locale.set(locVal);
+    setLocale(locVal);
   }
 
-  const unsubscribe = locale.subscribe(value => {
-    Cookies.set('locale', value);
-  });
-
-  onDestroy(unsubscribe);
-
-  let xLink = $derived($locale === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait');
-  let blogLink =
-    $derived($locale === 'ja' ? 'https://zenn.dev/prj_au_lait_jp' : 'https://dev.to/project_au_lait');
+  let xLink = $derived(
+    getLocale() === 'ja' ? 'https://x.com/prj_au_lait_jp' : 'https://x.com/project_au_lait'
+  );
+  let blogLink = $derived(
+    getLocale() === 'ja' ? 'https://zenn.dev/prj_au_lait_jp' : 'https://dev.to/project_au_lait'
+  );
 </script>
 
 <nav class="bg-black sticky top-0 py-4 px-6 z-10">
@@ -43,7 +38,7 @@
               <ChevronDownOutline class="w-5 h-5 ms-1 text-white dark:text-white" />
             </Button>
             <Dropdown bind:open={dropdownOpen} class="w-full mt-2 z-50">
-              {#each $locales as localeValue}
+              {#each locales as localeValue}
                 <DropdownItem class="text-center" on:click={() => chooseItem(localeValue)}>
                   {localeLabels[localeValue]}
                 </DropdownItem>
