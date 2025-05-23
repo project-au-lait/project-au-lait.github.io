@@ -1,0 +1,64 @@
+{
+  "catchphrase": "Make the bittersweetness of system development milder",
+  "description": "We aim to contribute to improving system quality by automating and streamlining the work of engineers involved in system development. The tool is developed as OSS and released under Apache License 2.0.",
+
+  "SVQK_features": "SVQK is an asset for developing web applications using SvelteKit, Quarkus, and Playwright.\nYou can start development with both the Frontend and Backend in a state where they pass tests (Unit, Integration, and End-to-End).\nEverything from setup to End-to-End testing is completed with commands, making it executable in a CI/CD environment as well.",
+  "SVQK_readmeLink": "https://github.com/project-au-lait/svqk/tree/main/svqk-generator#readme",
+
+  "SVQK_usage_requiredSoftware": "To develop applications using SVQK, you need the following software.",
+  "SVQK_usage_description": "To start developing with SVQK, create a project using Maven Archetype, which SVQK provides. To create a project from Archetype, run the following command.",
+  "SVQK_usage_setUtf_8": "Set the console character code to UTF-8.",
+  "SVQK_usage_createPj": "Create a SVQK project.",
+  "SVQK_usage_setup": "Move to the directory of the created project and execute the setup command.",
+  "SVQK_usage_openWs": "Open the created project as a VSCode workspace.",
+  "SVQK_usage_runTask": "Start the Backend and Frontend applications using VSCode Task.",
+  "SVQK_usage_access": "Once the Frontend application is started, the following URL will be displayed in the browser.",
+  "SVQK_usage_tryGenerator": "[Optional][Try Generator] Execute Generator in VSCode Task to generate a page and an automated test that performs CRUD operations on the world table.",
+  "SVQK_usage_taskFinished": "Access { link } when the Task is finished.",
+  "SVQK_usage_generatorDetails": "(See { link } for more information on Generator.)",
+  "SVQK_usage_structure": "The above \"mvn archetype:generate\" command will generate a project with the following configuration.",
+
+  "SVQK_archetype_supplement": "To start developing with SVQK, create a project using the Maven Archetype provided by SVQK. The following three Archetypes are available.",
+  "SVQK_archetype_referenceUrl": "https://github.com/project-au-lait/svqk/tree/main?tab=readme-ov-file#svqk",
+  "SVQK_archetype_referenceLabel": "reference implementations",
+  "SVQK_archetype_refimpl": "Archetype including all { referenceLabel }.",
+  "SVQK_archetype_arch": "This Archetype includes the common functions of the { referenceLabel }, excluding screen-specific ones.",
+  "SVQK_archetype_skeleton": "This Archetype contains only those { referenceLabel } that are used for communication checks, excluding all common functions and screen-specific items.",
+
+  "SVQK_setupCommandDescription": "The setup command performs the following operations.",
+  "SVQK_dbmsSetupTitle": "DBMS Setup",
+  "SVQK_dbmsSetupDescription": "Start a PostgreSQL container with Docker.",
+  "SVQK_dbMigrationTitle": "DB Migration",
+  "SVQK_dbMigrationDescription": "Create tables in DB with Flyway.",
+  "SVQK_frontendBuildTitle": "Frontend Build",
+  "SVQK_frontendBuildDescription": "Build the Frontend application (Svelte).",
+  "SVQK_backendBuildTitle": "Backend Build",
+  "SVQK_backendBuildDescription": "Build the Backend app (Quarkus). At this time, the Frontend app is included.",
+  "SVQK_integrationTestTitle": "Integration Test",
+  "SVQK_integrationTestDescription": "Start the Backend app and test the Web API with the Rest Client.",
+  "SVQK_e2eTestTitle": "End To End Test",
+  "SVQK_e2eTestDescription": "Start the Backend app (Frontend app included) and test End to End (Frontend + Backend + DB) with Playwright.",
+
+  "SVQK_summaryArchetype": "Types of archetype",
+  "SVQK_summarySetupCommand": "Setup command processing details",
+  "SVQK_summaryStructure": "Project Structure",
+
+  "SVQK_messageSetup": "A single setup command can perform all necessary project builds at once.",
+  "SVQK_messageOpenWs": "When you open a project in VS Code, the DB container is automatically started.",
+  "SVQK_messageFrontDemo": "Backend / Frontend servers can be started from VS Code.",
+  "SVQK_messagePwTest": "End-to-End tests can be executed using Playwright and a test report can be generated.",
+
+  "Batch Translator_description": "Batch Translator is a CLI tool for translating text files. The main intended users are OSS development project members who need to translate READMEs and documents. The main expected uses are as follows.<br/><br/> - Translating a single file (e.g. README.md)<br/> - Batch translation of files with specific extensions under a directory (documents using AsciiDoctor, etc.)",
+  "Batch Translator_usage": "Batch Translator runs as a Java command or as a Maven Plugin.",
+
+  "JPA Entity Generator_description": "JPA Entity Generator is a tool that reads a DB table definition and generates a JPA Entity class java file based on it.",
+  "JPA Entity Generator_usage": "JPA Entity Generator runs as a Java command or as a Maven Plugin.",
+
+  "Dev Servers_description": "Dev Servers is a Docker Compose asset to setup server tools for CI / CD. It setups the following tools with Docker and makes them available immediately.<br/><br/>- Souce Code Management : GitBucket<br/>- Continuous Integration : Jenkins<br/>- Static Code Analysis : SonarQube<br/>- Issue Tracking System : Redmine<br/>- Artifact Repository Manager : Nexus<br/>- Wiki : Wiki.js",
+  "Dev Servers_usage": "Dev Servers runs as Docker Compose",
+
+  "CSV Loader_description": "CSV Loader is a tool to load CSV files into DB. As of v0.8, CSV Loader is specialized for Flyway's Java-based Migration. We plan to support standalone jar execution, Maven Plugin, etc. in the next version.",
+  "CSV Loader_usage": "CSV Loader is used as a Java library via Flyway.",
+
+  "operatedBy": "Project Au Lait is developed and operated by Monocrea Co., Ltd."
+}
