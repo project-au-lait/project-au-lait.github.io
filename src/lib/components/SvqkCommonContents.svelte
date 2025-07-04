@@ -1,11 +1,11 @@
 <script lang="ts">
   import { CodeCopy } from 'svelte-code-copy';
-  import { t } from '$lib/translations';
   import Highlight from 'svelte-highlight';
   import { dos } from 'svelte-highlight/languages';
   import { slide } from 'svelte/transition';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
   import type { Snippet } from 'svelte';
+  import { m } from '$lib/paraglide/messages';
   interface Props {
     setUtf_8?: Snippet;
     createPjCommand: Snippet;
@@ -25,30 +25,31 @@
   const createReferenceLink = (href: string, label: string) => {
     return `<a href="${href}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">${label}</a>`;
   };
-  const refimplLabel = $t('msg.products.SVQK.usage.archetype.description.refimpl', {
+
+  const refimplLabel = m.SVQK_archetype_refimpl({
     referenceLabel: createReferenceLink(
-      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+      m.SVQK_archetype_referenceUrl(),
+      m.SVQK_archetype_referenceLabel()
     ),
-  } as any);
-  const archLavel = $t('msg.products.SVQK.usage.archetype.description.arch', {
+  });
+  const archLavel = m.SVQK_archetype_arch({
     referenceLabel: createReferenceLink(
-      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+      m.SVQK_archetype_referenceUrl(),
+      m.SVQK_archetype_referenceLabel()
     ),
-  } as any);
-  const skeletonLabel = $t('msg.products.SVQK.usage.archetype.description.skeleton', {
+  });
+  const skeletonLabel = m.SVQK_archetype_skeleton({
     referenceLabel: createReferenceLink(
-      $t('msg.products.SVQK.usage.archetype.referenceUrl'),
-      $t('msg.products.SVQK.usage.archetype.referenceLabel')
+      m.SVQK_archetype_referenceUrl(),
+      m.SVQK_archetype_referenceLabel()
     ),
-  } as any);
-  const taskFinishedLink = $t('msg.products.SVQK.usage.taskFinished', {
+  });
+  const taskFinishedLink = m.SVQK_usage_taskFinished({
     link: createReferenceLink('http://localhost:5173/worlds', 'http://localhost:5173/worlds'),
-  } as any);
-  const generatorDetailsLink = $t('msg.products.SVQK.usage.generatorDetails', {
-    link: createReferenceLink($t('msg.products.SVQK.readmeLink'), 'README'),
-  } as any);
+  });
+  const generatorDetailsLink = m.SVQK_usage_generatorDetails({
+    link: createReferenceLink(m.SVQK_readmeLink() as unknown as string, 'README'),
+  });
 </script>
 
 <ol class="list-decimal sm:px-8 px-3">
@@ -56,18 +57,18 @@
 
   <li>
     <p class={qsStepClass}>
-      {$t('msg.products.SVQK.usage.createPj')}
+      {m.SVQK_usage_createPj()}
     </p>
     {@render createPjCommand()}
     <button onclick={() => toggleAccordion(0)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[0]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
-      {$t('msg.products.SVQK.usage.summary.archetype')}
+      {m.SVQK_summaryArchetype()}
     </button>
     {#if accordionStates[0]}
       <div transition:slide class="pt-2">
-        {$t('msg.products.SVQK.usage.archetype.supplement')}
+        {m.SVQK_archetype_supplement()}
         <ul class="list-disc ml-8 my-3">
           <li>
             <b>svqk-archetype-refimpl</b>
@@ -99,57 +100,57 @@
   </li>
 
   <li>
-    <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setup')}</p>
+    <p class={qsStepClass}>{m.SVQK_usage_setup()}</p>
     {@render setupCommand()}
     <button onclick={() => toggleAccordion(4)} class="accordion-header">
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[4]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
-      {$t('msg.products.SVQK.usage.summary.setupCommand')}
+      {m.SVQK_summarySetupCommand()}
     </button>
     {#if accordionStates[4]}
       <div transition:slide class="pt-2">
-        {$t('msg.products.SVQK.usage.setupCommand.description')}
+        {m.SVQK_setupCommandDescription()}
         <ul class="list-decimal ml-8 my-3">
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.title')}</b>
+            <b>{m.SVQK_dbmsSetupTitle()}</b>
             <ul>
-              <li>{$t('msg.products.SVQK.usage.setupCommand.dbmsSetup.description')}</li>
+              <li>{m.SVQK_dbmsSetupDescription()}</li>
             </ul>
           </li>
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.title')}</b>
+            <b>{m.SVQK_dbMigrationTitle()}</b>
             <ul>
-              <li>{$t('msg.products.SVQK.usage.setupCommand.dbMigration.description')}</li>
+              <li>{m.SVQK_dbMigrationDescription()}</li>
             </ul>
           </li>
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.title')}</b>
+            <b>{m.SVQK_frontendBuildTitle()}</b>
             <ul>
-              <li>{$t('msg.products.SVQK.usage.setupCommand.frontendBuild.description')}</li>
+              <li>{m.SVQK_frontendBuildDescription()}</li>
             </ul>
           </li>
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.backendBuild.title')}</b>
+            <b>{m.SVQK_backendBuildTitle()}</b>
             <ul>
               <li>
-                {$t('msg.products.SVQK.usage.setupCommand.backendBuild.description')}
+                {m.SVQK_backendBuildDescription()}
               </li>
             </ul>
           </li>
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.integrationTest.title')}</b>
+            <b>{m.SVQK_integrationTestTitle()}</b>
             <ul>
               <li>
-                {$t('msg.products.SVQK.usage.setupCommand.integrationTest.description')}
+                {m.SVQK_integrationTestDescription()}
               </li>
             </ul>
           </li>
           <li>
-            <b>{$t('msg.products.SVQK.usage.setupCommand.e2eTest.title')}</b>
+            <b>{m.SVQK_e2eTestTitle()}</b>
             <ul>
               <li>
-                {$t('msg.products.SVQK.usage.setupCommand.e2eTest.description')}
+                {m.SVQK_e2eTestDescription()}
               </li>
             </ul>
           </li>
@@ -160,7 +161,7 @@
 
   <li>
     <p class={qsStepClass}>
-      {$t('msg.products.SVQK.usage.openWs')}
+      {m.SVQK_usage_openWs()}
     </p>
     <CodeCopy>
       <Highlight language={dos} code={'code my-artifactid.code-workspace'} />
@@ -169,11 +170,11 @@
       <div class="accordion-icon-wrapper" class:rotated={accordionStates[2]}>
         <AngleRightOutline class="xs icon" size="sm" />
       </div>
-      {$t('msg.products.SVQK.usage.summary.structure')}
+      {m.SVQK_summaryStructure()}
     </button>
     {#if accordionStates[2]}
       <div transition:slide class="pt-2">
-        {$t('msg.products.SVQK.usage.structure')}
+        {m.SVQK_usage_structure()}
         <Highlight
           language={dos}
           code={`📁 my-artifactid 
@@ -197,7 +198,7 @@
   </li>
 
   <li>
-    <p class={qsStepClass}>{$t('msg.products.SVQK.usage.runTask')}</p>
+    <p class={qsStepClass}>{m.SVQK_usage_runTask()}</p>
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
@@ -214,14 +215,14 @@
   </li>
 
   <li>
-    <p class={qsStepClass}>{$t('msg.products.SVQK.usage.access')}</p>
+    <p class={qsStepClass}>{m.SVQK_usage_access()}</p>
     <p class={qsStepClass}>
       {@html createReferenceLink('http://localhost:5173', 'http://localhost:5173')}
     </p>
   </li>
 
   <li>
-    <p class={qsStepClass}>{$t('msg.products.SVQK.usage.tryGenerator')}</p>
+    <p class={qsStepClass}>{m.SVQK_usage_tryGenerator()}</p>
     <ul class="list-disc pl-4">
       <li>
         <p class={qsStepClass} style={runTaskComandStyle}>
