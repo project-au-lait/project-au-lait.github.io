@@ -1,6 +1,5 @@
 <script lang="ts">
   import GitHubButton from '$lib/GitHubButton.svelte';
-  import { t, locale } from '$lib/translations';
   import EmblaCarousel from 'embla-carousel';
   import type { EmblaCarouselType } from 'embla-carousel';
   import { Kbd, TabItem, Tabs } from 'flowbite-svelte';
@@ -14,6 +13,8 @@
 
   import { onMount } from 'svelte';
   import SvqkCommonContents from '$lib/components/SvqkCommonContents.svelte';
+  import { m } from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   const qsStepClass = 'mt-4 mb-2';
   const kbdClass = 'px-2 py-1.5';
@@ -72,7 +73,7 @@
     </a>
   </div>
   <ul class="list-disc ml-8">
-    {#each $t('msg.products.SVQK.features').split('\n') as feature}
+    {#each m.SVQK_features().split('\n') as feature}
       <li>{feature}</li>
     {/each}
   </ul>
@@ -82,14 +83,14 @@
     <Button
       size="sm"
       color="dark"
-      href={`https://aulait.dev/svqk/${version}/${$locale}/`}
+      href={`https://aulait.dev/svqk/${version}/${getLocale}/`}
       target="_blank"><BookOutline class="me-2" />Docs</Button
     >
   </p>
 
   <h2 class="text-3xl mb-2 text-gray-900">Quick Start</h2>
 
-  <p>{$t('msg.products.SVQK.usage.requiredSoftware')}</p>
+  <p>{m.SVQK_usage_requiredSoftware()}</p>
 
   <ul class="list-disc ml-8 my-3">
     <li>Docker Desktop</li>
@@ -101,14 +102,14 @@
     <li>Visual Studio Code</li>
   </ul>
 
-  <p class="mb-2">{$t('msg.products.SVQK.usage.description')}</p>
+  <p class="mb-2">{m.SVQK_usage_description()}</p>
 
   <Tabs>
     <TabItem open title="Windows (cmd)">
       <SvqkCommonContents>
         {#snippet setUtf_8()}
           <li>
-            <p class={qsStepClass}>{$t('msg.products.SVQK.usage.setUtf_8')}</p>
+            <p class={qsStepClass}>{m.SVQK_usage_setUtf_8()}</p>
             <CodeCopy><Highlight language={dos} code={'chcp 65001'} /></CodeCopy>
           </li>
         {/snippet}
@@ -163,7 +164,6 @@
         {#snippet setupCommand()}
           <div>
             <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
-            <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
             <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy
             >
           </div>
@@ -185,7 +185,7 @@
       {#each images as img}
         <div class="min-w-0" style="flex: 0 0 100%;">
           <img src={img.src} alt={img.alt} class="rounded-lg" />
-          <p class="pt-2">{$t(img.message)}</p>
+          <p class="pt-2">{img.message}</p>
         </div>
       {/each}
     </div>

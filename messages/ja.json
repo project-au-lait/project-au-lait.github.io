@@ -1,0 +1,64 @@
+{
+  "catchphrase": "システム開発のほろ苦さをまろやかに",
+  "description": "Project Au Laitはシステム開発に役立つツールを開発しています。システム開発に携わるエンジニアの作業を自動化・効率化することで、システムの品質向上に寄与することを目指しています。ツールはOSSとして開発していて、Apache License 2.0で公開しています。",
+
+  "SVQK_features": "SVQKは、SvelteKit + Quarkus + PlaywrightでWebアプリケーションを開発するためのアセットです。\nFrontend、BackendがTest (Unit、Integration、End to End)をPassする状態から開発を開始することができます。\nセットアップからEnd to End Testまで全てコマンドで完結し、CI/CD環境でも実行可能です。",
+  "SVQK_readmeLink": "https://github.com/project-au-lait/svqk/tree/main/svqk-doc/src/docs/markdown/ja/svqk-generator#readme",
+
+  "SVQK_usage_requiredSoftware": "SVQKを使用してアプリケーションを開発するには、以下のソフトウェアが必要です。",
+  "SVQK_usage_description": "SVQKを使用して開発を始めるには、SVQKが提供するMaven Archetypeを使用してプロジェクトを作成します。Archetypeからプロジェクトを作成するには、以下のコマンドを実行します。",
+  "SVQK_usage_setUtf_8": "コンソールの文字コードをUTF-8にセットします。",
+  "SVQK_usage_createPj": "SVQKプロジェクトを作成します。",
+  "SVQK_usage_setup": "作成したプロジェクトのディレクトリに移動し、セットアップコマンドを実行します。",
+  "SVQK_usage_openWs": "作成したプロジェクトをVSCodeワークスペースとして開きます。",
+  "SVQK_usage_runTask": "VSCode TaskでBackendアプリケーションとFrontendアプリケーションを起動します。",
+  "SVQK_usage_access": "Frontendアプリケーションが起動すると、ブラウザで以下のURLが表示されます。",
+  "SVQK_usage_tryGenerator": "[任意][Generatorを試す] VSCode TaskでGeneratorを実行し、worldテーブルに対するCRUD操作を行うページと自動テストを生成します。",
+  "SVQK_usage_taskFinished": "Taskが終了したら { link } にアクセスします。",
+  "SVQK_usage_generatorDetails": "(Generatorの詳細は { link } を参照してください。)",
+  "SVQK_usage_structure": "上記の \"mvn archetype:generate\" コマンドを実行すると、以下の構成でプロジェクトが生成されます。",
+
+  "SVQK_archetype_supplement": "SVQK を使用して開発を始めるには、SVQK が提供する Maven Archetype を使用してプロジェクトを作成します。 以下の 3 種類の Archetype が使用できます。",
+  "SVQK_archetype_referenceUrl": "https://github.com/project-au-lait/svqk/tree/main/svqk-doc/src/docs/markdown/ja#svqk",
+  "SVQK_archetype_referenceLabel": "リファレンス実装",
+  "SVQK_archetype_refimpl": "{ referenceLabel } を全て含んだ Archetypeです。",
+  "SVQK_archetype_arch": "{ referenceLabel } の内、画面固有のものを除き、共通機能のものを含んだ Archetypeです。",
+  "SVQK_archetype_skeleton": "{ referenceLabel } の内、共通機能・画面固有のものを全て除き、疎通確認用のもののみを含んだ Archetypeです。",
+
+  "SVQK_setupCommandDescription": "セットアップコマンドでは次の処理を実行します。",
+  "SVQK_dbmsSetupTitle": "DBMS Setup",
+  "SVQK_dbmsSetupDescription": "DockerでPostgreSQLのコンテナを起動します。",
+  "SVQK_dbMigrationTitle": "DB Migration",
+  "SVQK_dbMigrationDescription": "FlywayでDBにテーブルを作成します。",
+  "SVQK_frontendBuildTitle": "Frontend Build",
+  "SVQK_frontendBuildDescription": "Frontendアプリ(Svelte)をビルドします。",
+  "SVQK_backendBuildTitle": "Backend Build",
+  "SVQK_backendBuildDescription": "Backendアプリ(Quarkus)をビルドします。この時、Frontendアプリを同梱します。",
+  "SVQK_integrationTestTitle": "Integration Test",
+  "SVQK_integrationTestDescription": "Backendアプリを起動し、Rest ClientでWeb APIをテストします。",
+  "SVQK_e2eTestTitle": "End To End Test",
+  "SVQK_e2eTestDescription": "Backendアプリ(Frontendアプリを同梱)を起動し、PlaywrightでEnd to End(Frontend + Backend + DB)のテストをします。",
+
+  "SVQK_summaryArchetype": "archetypeの種類",
+  "SVQK_summarySetupCommand": "セットアップコマンドの処理内容",
+  "SVQK_summaryStructure": "プロジェクトの構成",
+
+  "SVQK_messageSetup": "セットアップコマンド1つで、必要な各プロジェクトのビルドがまとめて実行できます。",
+  "SVQK_messageOpenWs": "VS Codeでプロジェクトを開くと、自動でDBコンテナが起動します。",
+  "SVQK_messageFrontDemo": "Backend / Frontendサーバーの起動が、VS Codeから実行できます。",
+  "SVQK_messagePwTest": "PlaywrightによるEnd to End Testの実行と、テストレポートの出力ができます。",
+
+  "Batch Translator_description": "Batch Translator はテキストファイルを翻訳する CLI ツールです。想定する主な利用者は、README やドキュメントを翻訳する必要のある OSS 開発プロジェクトメンバーです。想定する主な用途は以下のようなものです。<br/><br/>・1 つのファイルの翻訳 (README.md など)<br/>・ディレクトリ以下の特定の拡張子を持ったファイルの一括翻訳 (AsciiDoctorを使ったドキュメントなど)",
+  "Batch Translator_usage": "Batch Translator は Java コマンド、または Maven Plugin として実行します。",
+
+  "JPA Entity Generator_description": "JPA Entity Generator は、DB のテーブル定義を読み取り、それをもとに JPA の Entity クラスの java ファイルを生成するツールです。",
+  "JPA Entity Generator_usage": "JPA Entity Generator は Java コマンド、または Maven Plugin として実行します。",
+
+  "Dev Servers_description": "Dev Servers は、CI / CD 用のサーバー ツールをセットアップするための Docker Compose アセットです。 Docker を使用して次のツールをセットアップし、すぐに使用できるようにします。",
+  "Dev Servers_usage": "Dev ServersはDocker Composeとして実行します。",
+
+  "CSV Loader_description": "CSV LoaderはCSVファイルをDBにロードするツールです。CSV Loaderのv0.8時点での用途はFlywayのJava-based Migrationに特化しています。次バージョン移行でjar単独実行、Maven Plugin等のサポートを予定しています。",
+  "CSV Loader_usage": "CSV LoaderはFlyway経由でJavaライブラリとして使用します。",
+
+  "operatedBy": "Project Au Laitは株式会社モノクレアが開発、運営しています。"
+}
