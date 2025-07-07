@@ -164,7 +164,6 @@
         {#snippet setupCommand()}
           <div>
             <CodeCopy><Highlight language={bash} code={'cd my-artifactid'} /></CodeCopy>
-            <CodeCopy><Highlight language={bash} code={'chmod u+x mvnw'} /></CodeCopy>
             <CodeCopy><Highlight language={bash} code={'./mvnw install -T 1C -P setup'} /></CodeCopy
             >
           </div>
