@@ -5,6 +5,7 @@
   import { slide } from 'svelte/transition';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
   import type { Snippet } from 'svelte';
+  import { Kbd } from 'flowbite-svelte';
   import { m } from '$lib/paraglide/messages';
   interface Props {
     setUtf_8?: Snippet;
@@ -17,6 +18,7 @@
 
   const qsStepClass = 'mt-4 mb-2';
   const runTaskComandStyle = 'display: flex; align-items: center;';
+  const kbdClass = 'px-2 py-1.5';
 
   let accordionStates = $state([false, false, false, false, false, false]);
   const toggleAccordion = (index: number) => {
@@ -219,7 +221,11 @@
               /></CodeCopy
             >
           </li>
-          <li>{m.SVQK_usage_javaClean()}</li>
+          <li>
+            {m.SVQK_usage_vsCodePalette()}<Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}
+              >Shift</Kbd
+            > + <Kbd class={kbdClass}>P</Kbd>{m.SVQK_usage_javaCleanTask()}
+          </li>
         </ul>
       </div>
     {/if}
