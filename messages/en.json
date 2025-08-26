@@ -17,6 +17,10 @@
   "SVQK_usage_taskFinished": "Access { link } when the Task is finished.",
   "SVQK_usage_generatorDetails": "(See { link } for more information on Generator.)",
   "SVQK_usage_structure": "The above \"mvn archetype:generate\" command will generate a project with the following configuration.",
+  "SVQK_usage_importDoesNotComplete": "When you open a VS Code workspace, the status bar may continue to display “Java: Importing Maven project(s)“\n(In a normal state, this display changes to “Java: Ready”.) \nWhile this is happening, some Java-related features of VS Code are unavailable. To resolve the issue, follow the steps below.",
+  "SVQK_usage_directryDelete": "Delete the my-artifactid-generator/node_modules directory.\n(Delete it in File Explorer, or run the command below.)",
+  "SVQK_usage_vsCodePalette": "From VS Code’s Command Palette (",
+  "SVQK_usage_javaCleanTask": "), run “Java: Clean Java Language Server Workspace.“",
 
   "SVQK_archetype_supplement": "To start developing with SVQK, create a project using the Maven Archetype provided by SVQK. The following three Archetypes are available.",
   "SVQK_archetype_referenceUrl": "https://github.com/project-au-lait/svqk/tree/main?tab=readme-ov-file#svqk",
@@ -42,6 +46,7 @@
   "SVQK_summaryArchetype": "Types of archetype",
   "SVQK_summarySetupCommand": "Setup command processing details",
   "SVQK_summaryStructure": "Project Structure",
+  "SVQK_projectImportDoesNotComplete": "If the project import does not complete",
 
   "SVQK_messageSetup": "A single setup command can perform all necessary project builds at once.",
   "SVQK_messageOpenWs": "When you open a project in VS Code, the DB container is automatically started.",

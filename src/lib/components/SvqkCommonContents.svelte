@@ -5,6 +5,7 @@
   import { slide } from 'svelte/transition';
   import AngleRightOutline from 'flowbite-svelte-icons/AngleRightOutline.svelte';
   import type { Snippet } from 'svelte';
+  import { Kbd } from 'flowbite-svelte';
   import { m } from '$lib/paraglide/messages';
   interface Props {
     setUtf_8?: Snippet;
@@ -17,6 +18,7 @@
 
   const qsStepClass = 'mt-4 mb-2';
   const runTaskComandStyle = 'display: flex; align-items: center;';
+  const kbdClass = 'px-2 py-1.5';
 
   let accordionStates = $state([false, false, false, false, false, false]);
   const toggleAccordion = (index: number) => {
@@ -193,6 +195,38 @@
 │   └── 📄 pom.xml
 └── 📄 pom.xml`}
         />
+      </div>
+    {/if}
+    <br />
+    <button onclick={() => toggleAccordion(3)} class="accordion-header">
+      <div class="accordion-icon-wrapper" class:rotated={accordionStates[3]}>
+        <AngleRightOutline class="xs icon" size="sm" />
+      </div>
+      {m.SVQK_projectImportDoesNotComplete()}
+    </button>
+    {#if accordionStates[3]}
+      <div transition:slide class="pt-2">
+        {#each m.SVQK_usage_importDoesNotComplete().split('\n') as text}
+          {text}<br />
+        {/each}
+        <ul class="list-decimal ml-8 my-3">
+          <li>
+            {#each m.SVQK_usage_directryDelete().split('\n') as text}
+              {text}<br />
+            {/each}
+            <CodeCopy
+              ><Highlight
+                language={dos}
+                code={'rmdir /s /q my-artifactid-generator\\node_modules'}
+              /></CodeCopy
+            >
+          </li>
+          <li>
+            {m.SVQK_usage_vsCodePalette()}<Kbd class={kbdClass}>Ctrl</Kbd> + <Kbd class={kbdClass}
+              >Shift</Kbd
+            > + <Kbd class={kbdClass}>P</Kbd>{m.SVQK_usage_javaCleanTask()}
+          </li>
+        </ul>
       </div>
     {/if}
   </li>
