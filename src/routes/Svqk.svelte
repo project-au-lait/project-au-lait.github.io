@@ -23,22 +23,22 @@
     {
       alt: 'setup',
       src: '/images/svqk/setup.gif',
-      message: 'msg.products.SVQK.usage.message.setup',
+      message: m.SVQK_messageSetup(),
     },
     {
       alt: 'open-ws',
       src: '/images/svqk/open-ws.gif',
-      message: 'msg.products.SVQK.usage.message.openWs',
+      message: m.SVQK_messageOpenWs(),
     },
     {
       alt: 'front-demo',
       src: '/images/svqk/front-demo.gif',
-      message: 'msg.products.SVQK.usage.message.frontDemo',
+      message: m.SVQK_messageFrontDemo(),
     },
     {
       alt: 'pw-test',
       src: '/images/svqk/pw-test.gif',
-      message: 'msg.products.SVQK.usage.message.pwTest',
+      message: m.SVQK_messagePwTest(),
     },
   ];
 
