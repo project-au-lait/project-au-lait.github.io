@@ -83,7 +83,7 @@
     <Button
       size="sm"
       color="dark"
-      href={`https://aulait.dev/svqk/${version}/${getLocale}/`}
+      href={`https://aulait.dev/svqk/${version}/${getLocale()}/`}
       target="_blank"><BookOutline class="me-2" />Docs</Button
     >
   </p>
