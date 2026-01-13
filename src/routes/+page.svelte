@@ -8,6 +8,6 @@
 <main class="min-h-screen sm:px-16 px-4">
   <Catchphrase />
   <Description />
-  <Svqk />
+  <!-- <Svqk /> -->
   <Products />
 </main>
